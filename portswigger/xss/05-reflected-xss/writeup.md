@@ -274,4 +274,4 @@ onclick
 
 ---
 
-> `[Подробнее о том, зачем нужен iframe](./explanation.md)`
+> [Подробнее о том, зачем нужен iframe](./explanation.md)
