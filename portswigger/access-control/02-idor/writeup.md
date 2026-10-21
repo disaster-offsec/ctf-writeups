@@ -32,7 +32,7 @@ You can log in to your own account using the following credentials: `wiener:pete
 > *Это классический пример `Horizontal Privilege Escalation`, реализованный через `IDOR`*
 
 # Remediation
-Что касается защиты все аналогично как и с [*прошлой лабой на `IDOR`*](..\01-idor\writeup.md)
+Что касается защиты все аналогично как и с [*прошлой лабой на `IDOR`*](../01-idor/writeup.md)
 
 Но все же деталь есть:
 > Сервер должен игнорировать параметр `id` из `URL` при запросе профиля
