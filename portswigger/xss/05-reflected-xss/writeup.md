@@ -271,3 +271,7 @@ onclick
 > Помимо прочего в настройках я указал следующее:
 > в графе **Settings:Network** `Default to HTTP/2 if the server supports it` снял галку.
 > ибо сначала у меня css стили не грузились, а потом и вовсе вылезло: `Stream failed to close correctly`
+
+---
+
+> `[Подробнее о том, зачем нужен iframe](./explanation.md)`
