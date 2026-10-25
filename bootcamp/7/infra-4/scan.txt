@@ -1,0 +1,103 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-10-25 07:51 UTC
+Nmap scan report for 10.154.16.100
+Host is up (0.23s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.104
+Host is up (0.22s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.105
+Host is up (0.26s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.106
+Host is up (0.26s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.107
+Host is up (0.22s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.134
+Host is up (0.29s latency).
+
+PORT    STATE SERVICE
+88/tcp  open  kerberos-sec
+389/tcp open  ldap
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.135
+Host is up (0.23s latency).
+
+PORT    STATE SERVICE
+88/tcp  open  kerberos-sec
+389/tcp open  ldap
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.196
+Host is up (0.24s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.197
+Host is up (0.24s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.198
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.201
+Host is up (0.19s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.202
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.203
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.204
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.205
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap scan report for 10.154.16.208
+Host is up (0.20s latency).
+Not shown: 2 closed tcp ports (conn-refused)
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Nmap done: 256 IP addresses (256 hosts up) scanned in 29.17 seconds
+
