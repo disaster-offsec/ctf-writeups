@@ -26,7 +26,7 @@ email=wiener@normal-user.com
 ```
 
 Пример эксплойта (HTML-форма):
-```http
+```html
 <html>
     <body>
         <form action="https://vulnerable-website.com/email/change" method="POST">
