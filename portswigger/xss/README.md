@@ -38,3 +38,15 @@ XSS — уязвимость, позволяющая внедрить вредо
 2.  **Кодирование на выходе (Encoding):** Самое важное. HTML-encode для HTML-контекста, JS-encode для JS-контекста. (Библиотеки вроде `htmlentities` в PHP или `TextEncoders` в Java).
 3.  **HTTP-заголовки:** `Content-Type` и `X-Content-Type-Options`.
 4.  **CSP (Content Security Policy):** Заголовок, который запрещает выполнение скриптов из непроверенных источников (последняя линия обороны).
+
+---
+
+## Labs
+
+| #  | Lab                                                                   | Last commit | Path                             |
+|----|-----------------------------------------------------------------------|-------------|----------------------------------|
+| 01 | Lab: Reflected XSS into HTML context with nothing encoded             | 2026-10-21  | portswigger/xss/01-reflected-xss |
+| 02 | Lab: Stored XSS into HTML context with nothing encoded                | 2026-10-21  | portswigger/xss/02-stored-xss    |
+| 03 | Lab: DOM XSS in document.write sink using source location.search      | 2026-10-21  | portswigger/xss/03-dom-xss       |
+| 04 | Lab: DOM XSS in innerHTML sink using source location.search           | 2026-10-21  | portswigger/xss/04-dom-xss       |
+| 05 | Reflected XSS into HTML context with most tags and attributes blocked | 2026-10-21  | portswigger/xss/05-reflected-xss |

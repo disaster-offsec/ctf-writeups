@@ -31,3 +31,7 @@
 
 # Если после коммита в языках всё ещё мусор — найди виновника и добавь его сюда:
 #   git ls-files | grep -Ei '\.(v|sv|ags|s)$'
+
+# AGS Script матчится на .asc/.ash, а не .ags
+*.asc  linguist-detectable=false
+*.ash  linguist-detectable=false
