@@ -7,6 +7,7 @@
   1. Корневой README.md: заполняет секцию между маркерами
      <!-- INDEX:START --> ... <!-- INDEX:END -->
      (если маркеров нет — добавляет секцию в конец файла).
+     Все названия в таблицах — кликабельные ссылки на папку райтапа.
   2. Для каждой папки класса PortSwigger добавляет/обновляет секцию "## Labs"
      с таблицей лаб внутри классового README.md.
 
@@ -79,8 +80,26 @@ def rel(p: Path) -> str:
     return p.relative_to(ROOT).as_posix()
 
 
+def md_url(path: str) -> str:
+    """URL для ссылки: экранируем то, что ломает markdown-ссылку."""
+    return path.replace(" ", "%20").replace("(", "%28").replace(")", "%29")
+
+
+def md_link(text: str, path: str) -> str:
+    """Кликабельная ячейка таблицы: [текст](папка/)."""
+    text = (text.replace("\\", "\\\\")
+                .replace("[", "\\[")
+                .replace("]", "\\]")
+                .replace("|", "\\|"))
+    return f"[{text}]({md_url(path)})"
+
+
+def section_header(name: str) -> str:
+    return f"### [{name}]({md_url(name)}/)"
+
+
 def table(rows: list[list[str]]) -> str:
-    if not rows:
+    if len(rows) <= 1:  # нет ни одной строки данных
         return "_Пока пусто._\n"
     widths = [max(len(r[i]) for r in rows) for i in range(len(rows[0]))]
     def fmt(r): return "| " + " | ".join(c.ljust(w) for c, w in zip(r, widths)) + " |"
@@ -93,25 +112,28 @@ def section_for(top: Path) -> str:
     name = top.name
     classes = [d for d in top.iterdir() if d.is_dir() and not d.name.startswith(".")]
     if name == PORTSWIGGER:
-        rows = [["Class", "Labs", "Last commit", "Path"]]
+        rows = [["Class", "Labs", "Last commit"]]
         for c in sorted(classes):
             labs = sub_writeups(c)
             rows.append([
-                c.name, str(len(labs)) if labs else "-",
-                last_commit(labs[-1]) if labs else "-", rel(c),
+                md_link(c.name, rel(c) + "/"),
+                str(len(labs)) if labs else "-",
+                last_commit(labs[-1]) if labs else "-",
             ])
-        return f"### {name}\n\n" + table(rows)
+        return section_header(name) + "\n\n" + table(rows)
 
     single = (top / "README.md").exists()
     if single:
-        rows = [["Writeup", "Files", "Last commit", "Path"]]
-        rows.append([readme_title(top), str(count_files(top)), last_commit(top), rel(top)])
-        return f"### {name}\n\n" + table(rows)
+        rows = [["Writeup", "Files", "Last commit"]]
+        rows.append([md_link(readme_title(top), rel(top) + "/"),
+                     str(count_files(top)), last_commit(top)])
+        return section_header(name) + "\n\n" + table(rows)
 
-    rows = [["Writeup", "Files", "Last commit", "Path"]]
+    rows = [["Writeup", "Files", "Last commit"]]
     for w in sub_writeups(top):
-        rows.append([readme_title(w), str(count_files(w)), last_commit(w), rel(w)])
-    return f"### {name}\n\n" + table(rows)
+        rows.append([md_link(readme_title(w), rel(w) + "/"),
+                     str(count_files(w)), last_commit(w)])
+    return section_header(name) + "\n\n" + table(rows)
 
 
 def build_index() -> str:
@@ -155,10 +177,10 @@ def update_root_readme() -> bool:
 
 
 def update_class_readme(cls: Path, labs: list[Path]) -> None:
-    rows = [["#", "Lab", "Last commit", "Path"]]
+    rows = [["#", "Lab", "Last commit"]]
     for lab in labs:
         num = lab.name.split("-")[0]
-        rows.append([num, readme_title(lab), last_commit(lab), rel(lab)])
+        rows.append([num, md_link(readme_title(lab), rel(lab) + "/"), last_commit(lab)])
     block = "## Labs\n\n" + table(rows)
 
     readme = cls / "README.md"
