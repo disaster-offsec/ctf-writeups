@@ -92,12 +92,12 @@ python3 tools/generate_index.py   # обновить индексные табл
 
 | Class          | Labs | Last commit | Path                       |
 |----------------|------|-------------|----------------------------|
-| access-control | 3    | 2026-10-21  | portswigger/access-control |
+| access-control | 3    | 2026-11-18  | portswigger/access-control |
 | csrf           | 6    | 2026-11-18  | portswigger/csrf           |
 | path-traversal | 1    | 2026-10-26  | portswigger/path-traversal |
-| sqli           | 11   | 2026-10-21  | portswigger/sqli           |
+| sqli           | 11   | 2026-11-18  | portswigger/sqli           |
 | ssrf           | 3    | 2026-10-26  | portswigger/ssrf           |
-| xss            | 5    | 2026-10-21  | portswigger/xss            |
+| xss            | 5    | 2026-11-18  | portswigger/xss            |
 | xxe            | 1    | 2026-10-26  | portswigger/xxe            |
 
 ## CTF events
@@ -155,10 +155,10 @@ python3 tools/generate_index.py   # обновить индексные табл
 | [infra-4] Внутренняя разведка (Active Directory)                    | 3     | 2026-10-25  | bootcamp/7/infra-4       |
 | [infra-5] Получение доступа к компьютеру сотрудника HR-департамента | 1     | 2026-10-25  | bootcamp/7/infra-5       |
 | [infra-6] Получите доступ к компьютеру сотрудника HR-департамента   | 2     | 2026-10-25  | bootcamp/7/infra-6       |
-| Отчёт по задачам web-1-1 -- RCE на узле library.edu.stf             | 2     | 2026-10-18  | bootcamp/7/web-1/web-1-1 |
-| Райтап: Standoff 365 Bootcamp — Web-1-2 (CVE-2023-4911)             | 3     | 2026-10-19  | bootcamp/7/web-1/web-1-2 |
-| Отчёт по задачам web-2-1 -- LFI на узле www.edu.stf                 | 1     | 2026-10-19  | bootcamp/7/web-2/1       |
-| web-2-2: RCE. Write-Up                                              | 1     | 2026-10-19  | bootcamp/7/web-2/2       |
+| Отчёт по задачам web-1-1 -- RCE на узле library.edu.stf             | 2     | 2026-11-18  | bootcamp/7/web-1/web-1-1 |
+| Райтап: Standoff 365 Bootcamp — Web-1-2 (CVE-2023-4911)             | 3     | 2026-11-18  | bootcamp/7/web-1/web-1-2 |
+| Отчёт по задачам web-2-1 -- LFI на узле www.edu.stf                 | 1     | 2026-11-18  | bootcamp/7/web-2/1       |
+| web-2-2: RCE. Write-Up                                              | 1     | 2026-11-18  | bootcamp/7/web-2/2       |
 
 ### flare-on
 
