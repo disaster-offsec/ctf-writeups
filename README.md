@@ -38,44 +38,6 @@ ctf-writeups/
 └── others/               # разрозненные задачи
 ```
 
-## PortSwigger Academy
-
-| Class | Labs | Path |
-|-------|------|------|
-| SQL Injection | n | [portswigger/sqli](portswigger/sqli/) |
-| Cross-Site Scripting | n | [portswigger/xss](portswigger/xss/) |
-| Cross-Site Request Forgery | 5 | [portswigger/csrf](portswigger/csrf/) |
-| Access Control | n | [portswigger/access-control](portswigger/access-control/) |
-| SSRF | n | [portswigger/ssrf](portswigger/ssrf/) |
-| XXE | n | [portswigger/xxe](portswigger/xxe/) |
-| Path Traversal | n | [portswigger/path-traversal](portswigger/path-traversal/) |
-
-*Каждый класс — конспект теории (`README.md`: что это, 3 условия атаки, защиты,
-почему защита ломается) + нумерованные лабы `NN-slug/` с полным прохождением.*
-
-## HackTheBox
-
-Machines: [hackthebox/](hackthebox/) — starting point -> season machines.
-Каждая машина: разведка -> foothold -> privilege escalation → **why it worked**.
-
-## CTF events
-
-| Event | Team | Writeups |
-|-------|------|----------|
-| SOLAR CTF 2026 | SecondLayer | [solarctf-2026/](solarctf-2026/) |
-| Кубок CTF 2026 | SecondLayer | [kubok-ctf-2026/](kubok-ctf-2026/) |
-| AvitoCTF 2026 (HoneyBadger) | NEDO-OFFSEC | [avitoctf-2026/](avitoctf-2026/) |
-
----
-
-## Conventions
-
-- Имя лабы: `NN-краткое-имя` внутри папки класса/события.
-- Одна лаба = `README.md` (прохождение) + `EXPLANATION.md` (теория) + `figN.png`.
-- В каждом райтапе есть секция **Why it works** — ментальная модель уязвимости,
-  а не только последовательность команд.
-- Коммиты: `[<класс>|<платформа>] суть`; служебные: `docs:`, `chore:`, `fix:`.
-
 ## New writeup
 
 ```
@@ -95,7 +57,7 @@ python3 tools/generate_index.py   # обновить индексные табл
 | access-control | 3    | 2026-11-18  | portswigger/access-control |
 | csrf           | 6    | 2026-11-18  | portswigger/csrf           |
 | path-traversal | 1    | 2026-10-26  | portswigger/path-traversal |
-| sqli           | 11   | 2026-11-18  | portswigger/sqli           |
+| sqli           | 12   | 2026-11-08  | portswigger/sqli           |
 | ssrf           | 3    | 2026-10-26  | portswigger/ssrf           |
 | xss            | 5    | 2026-11-18  | portswigger/xss            |
 | xxe            | 1    | 2026-10-26  | portswigger/xxe            |
