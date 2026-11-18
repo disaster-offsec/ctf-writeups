@@ -50,126 +50,126 @@ python3 tools/generate_index.py   # обновить индексные табл
 <!-- INDEX:START -->
 ## PortSwigger Academy
 
-### portswigger
+### [portswigger](portswigger/)
 
-| Class          | Labs | Last commit | Path                       |
-|----------------|------|-------------|----------------------------|
-| access-control | 3    | 2026-11-18  | portswigger/access-control |
-| csrf           | 6    | 2026-11-18  | portswigger/csrf           |
-| path-traversal | 1    | 2026-10-26  | portswigger/path-traversal |
-| sqli           | 12   | 2026-11-08  | portswigger/sqli           |
-| ssrf           | 3    | 2026-10-26  | portswigger/ssrf           |
-| xss            | 5    | 2026-11-18  | portswigger/xss            |
-| xxe            | 1    | 2026-10-26  | portswigger/xxe            |
+| Class                                         | Labs | Last commit |
+|-----------------------------------------------|------|-------------|
+| [access-control](portswigger/access-control/) | 3    | 2026-11-18  |
+| [csrf](portswigger/csrf/)                     | 6    | 2026-11-18  |
+| [path-traversal](portswigger/path-traversal/) | 1    | 2026-10-26  |
+| [sqli](portswigger/sqli/)                     | 12   | 2026-11-08  |
+| [ssrf](portswigger/ssrf/)                     | 3    | 2026-10-26  |
+| [xss](portswigger/xss/)                       | 5    | 2026-11-18  |
+| [xxe](portswigger/xxe/)                       | 1    | 2026-10-26  |
 
 ## CTF events
 
-### avitoctf-2026
+### [avitoctf-2026](avitoctf-2026/)
 
-| Writeup         | Files | Last commit | Path                          |
-|-----------------|-------|-------------|-------------------------------|
-| Сопромёд: метро | 5     | 2026-11-18  | avitoctf-2026/sopromyod-metro |
+| Writeup                                           | Files | Last commit |
+|---------------------------------------------------|-------|-------------|
+| [Сопромёд: метро](avitoctf-2026/sopromyod-metro/) | 5     | 2026-11-18  |
 
-### kubok-ctf-2026
+### [kubok-ctf-2026](kubok-ctf-2026/)
 
-| Writeup                                     | Files | Last commit | Path                        |
-|---------------------------------------------|-------|-------------|-----------------------------|
-| burmalda                                    | 2     | 2026-11-18  | kubok-ctf-2026/burmalda     |
-| compuuuter — writeup                        | 10    | 2026-11-18  | kubok-ctf-2026/computer     |
-| connecttome                                 | 3     | 2026-11-18  | kubok-ctf-2026/connecttome  |
-| Электронный журнал — райтап (web, 1000 pts) | 29    | 2026-11-18  | kubok-ctf-2026/eljournal    |
-| image-viewer                                | 2     | 2026-11-18  | kubok-ctf-2026/image-viewer |
-| MeowSim: Schrödinger E... — райтап          | 3     | 2026-11-18  | kubok-ctf-2026/meow-sim     |
-| Райтап: реверс-инжиниринг задания mmm       | 8     | 2026-11-18  | kubok-ctf-2026/mmm          |
-| my-own-fs                                   | 6     | 2026-11-18  | kubok-ctf-2026/my-own-fs    |
-| Weird RSA — райтап                          | 5     | 2026-11-18  | kubok-ctf-2026/weird-rsa    |
+| Writeup                                                                  | Files | Last commit |
+|--------------------------------------------------------------------------|-------|-------------|
+| [burmalda](kubok-ctf-2026/burmalda/)                                     | 2     | 2026-11-18  |
+| [compuuuter — writeup](kubok-ctf-2026/computer/)                         | 10    | 2026-11-18  |
+| [connecttome](kubok-ctf-2026/connecttome/)                               | 3     | 2026-11-18  |
+| [Электронный журнал — райтап (web, 1000 pts)](kubok-ctf-2026/eljournal/) | 29    | 2026-11-18  |
+| [image-viewer](kubok-ctf-2026/image-viewer/)                             | 2     | 2026-11-18  |
+| [MeowSim: Schrödinger E... — райтап](kubok-ctf-2026/meow-sim/)           | 3     | 2026-11-18  |
+| [Райтап: реверс-инжиниринг задания mmm](kubok-ctf-2026/mmm/)             | 8     | 2026-11-18  |
+| [my-own-fs](kubok-ctf-2026/my-own-fs/)                                   | 6     | 2026-11-18  |
+| [Weird RSA — райтап](kubok-ctf-2026/weird-rsa/)                          | 5     | 2026-11-18  |
 
-### solarctf-2026
+### [solarctf-2026](solarctf-2026/)
 
-| Writeup                                     | Files | Last commit | Path                                       |
-|---------------------------------------------|-------|-------------|--------------------------------------------|
-| Writeup — Kommunalki (web)                  | 1     | 2026-11-18  | solarctf-2026/_unsorted/kommunalki         |
-| Невероятная утка                            | 1     | 2026-11-18  | solarctf-2026/_unsorted/neveroyatnaya-utka |
-| Нейропитомец                                | 1     | 2026-11-18  | solarctf-2026/_unsorted/neyropitomets      |
-| Новый телефон                               | 1     | 2026-11-18  | solarctf-2026/_unsorted/novyy-telefon      |
-| Out of frame — Майя                         | 1     | 2026-11-18  | solarctf-2026/_unsorted/out-of-frame       |
-| PBX «Солярис-3» — разбор ночного дампа      | 1     | 2026-11-18  | solarctf-2026/_unsorted/pbx-sabotage       |
-| Что было в архиве                           | 1     | 2026-11-18  | solarctf-2026/_unsorted/poslednee-delo     |
-| Пустота — решение                           | 1     | 2026-11-18  | solarctf-2026/_unsorted/pustota            |
-| Шах и мат                                   | 1     | 2026-11-18  | solarctf-2026/_unsorted/shakh-i-mat        |
-| Writeup — Zero Report (SolarCTF 2026)       | 5     | 2026-11-18  | solarctf-2026/crypto/0-report              |
-| Writeup — Пропавший архив (SolarCTF 2026)   | 5     | 2026-11-18  | solarctf-2026/crypto/lostarch              |
-| Writeup — РакушкаBreach (SolarCTF 2026)     | 2     | 2026-11-18  | solarctf-2026/forensics/breach             |
-| Writeup — Локпик / Lockpick (SolarCTF 2026) | 5     | 2026-11-18  | solarctf-2026/misc/lockpick                |
-| Writeup — Вентилятор303 (SolarCTF 2026)     | 2     | 2026-11-18  | solarctf-2026/misc/vent303                 |
-| Writeup — Ткач / Weaver (SolarCTF 2026)     | 10    | 2026-11-18  | solarctf-2026/reverse/tkach                |
-| Writeup — Vintage Bank (SolarCTF 2026)      | 2     | 2026-11-18  | solarctf-2026/web/vintage_bank             |
+| Writeup                                                                         | Files | Last commit |
+|---------------------------------------------------------------------------------|-------|-------------|
+| [Writeup — Kommunalki (web)](solarctf-2026/_unsorted/kommunalki/)               | 1     | 2026-11-18  |
+| [Невероятная утка](solarctf-2026/_unsorted/neveroyatnaya-utka/)                 | 1     | 2026-11-18  |
+| [Нейропитомец](solarctf-2026/_unsorted/neyropitomets/)                          | 1     | 2026-11-18  |
+| [Новый телефон](solarctf-2026/_unsorted/novyy-telefon/)                         | 1     | 2026-11-18  |
+| [Out of frame — Майя](solarctf-2026/_unsorted/out-of-frame/)                    | 1     | 2026-11-18  |
+| [PBX «Солярис-3» — разбор ночного дампа](solarctf-2026/_unsorted/pbx-sabotage/) | 1     | 2026-11-18  |
+| [Что было в архиве](solarctf-2026/_unsorted/poslednee-delo/)                    | 1     | 2026-11-18  |
+| [Пустота — решение](solarctf-2026/_unsorted/pustota/)                           | 1     | 2026-11-18  |
+| [Шах и мат](solarctf-2026/_unsorted/shakh-i-mat/)                               | 1     | 2026-11-18  |
+| [Writeup — Zero Report (SolarCTF 2026)](solarctf-2026/crypto/0-report/)         | 5     | 2026-11-18  |
+| [Writeup — Пропавший архив (SolarCTF 2026)](solarctf-2026/crypto/lostarch/)     | 5     | 2026-11-18  |
+| [Writeup — РакушкаBreach (SolarCTF 2026)](solarctf-2026/forensics/breach/)      | 2     | 2026-11-18  |
+| [Writeup — Локпик / Lockpick (SolarCTF 2026)](solarctf-2026/misc/lockpick/)     | 5     | 2026-11-18  |
+| [Writeup — Вентилятор303 (SolarCTF 2026)](solarctf-2026/misc/vent303/)          | 2     | 2026-11-18  |
+| [Writeup — Ткач / Weaver (SolarCTF 2026)](solarctf-2026/reverse/tkach/)         | 10    | 2026-11-18  |
+| [Writeup — Vintage Bank (SolarCTF 2026)](solarctf-2026/web/vintage_bank/)       | 2     | 2026-11-18  |
 
 ## Platforms & trainings
 
-### bootcamp
+### [bootcamp](bootcamp/)
 
-| Writeup                                                             | Files | Last commit | Path                     |
-|---------------------------------------------------------------------|-------|-------------|--------------------------|
-| infra-1                                                             | 2     | 2026-10-24  | bootcamp/7/infra-1       |
-| infra                                                               | 7     | 2026-10-25  | bootcamp/7/infra-2       |
-| infra-3                                                             | 1     | 2026-10-25  | bootcamp/7/infra-3       |
-| [infra-4] Внутренняя разведка (Active Directory)                    | 3     | 2026-10-25  | bootcamp/7/infra-4       |
-| [infra-5] Получение доступа к компьютеру сотрудника HR-департамента | 1     | 2026-10-25  | bootcamp/7/infra-5       |
-| [infra-6] Получите доступ к компьютеру сотрудника HR-департамента   | 2     | 2026-10-25  | bootcamp/7/infra-6       |
-| Отчёт по задачам web-1-1 -- RCE на узле library.edu.stf             | 2     | 2026-11-18  | bootcamp/7/web-1/web-1-1 |
-| Райтап: Standoff 365 Bootcamp — Web-1-2 (CVE-2023-4911)             | 3     | 2026-11-18  | bootcamp/7/web-1/web-1-2 |
-| Отчёт по задачам web-2-1 -- LFI на узле www.edu.stf                 | 1     | 2026-11-18  | bootcamp/7/web-2/1       |
-| web-2-2: RCE. Write-Up                                              | 1     | 2026-11-18  | bootcamp/7/web-2/2       |
+| Writeup                                                                                      | Files | Last commit |
+|----------------------------------------------------------------------------------------------|-------|-------------|
+| [infra-1](bootcamp/7/infra-1/)                                                               | 2     | 2026-10-24  |
+| [infra](bootcamp/7/infra-2/)                                                                 | 7     | 2026-10-25  |
+| [infra-3](bootcamp/7/infra-3/)                                                               | 1     | 2026-10-25  |
+| [\[infra-4\] Внутренняя разведка (Active Directory)](bootcamp/7/infra-4/)                    | 3     | 2026-10-25  |
+| [\[infra-5\] Получение доступа к компьютеру сотрудника HR-департамента](bootcamp/7/infra-5/) | 1     | 2026-10-25  |
+| [\[infra-6\] Получите доступ к компьютеру сотрудника HR-департамента](bootcamp/7/infra-6/)   | 2     | 2026-10-25  |
+| [Отчёт по задачам web-1-1 -- RCE на узле library.edu.stf](bootcamp/7/web-1/web-1-1/)         | 2     | 2026-11-18  |
+| [Райтап: Standoff 365 Bootcamp — Web-1-2 (CVE-2023-4911)](bootcamp/7/web-1/web-1-2/)         | 3     | 2026-11-18  |
+| [Отчёт по задачам web-2-1 -- LFI на узле www.edu.stf](bootcamp/7/web-2/1/)                   | 1     | 2026-11-18  |
+| [web-2-2: RCE. Write-Up](bootcamp/7/web-2/2/)                                                | 1     | 2026-11-18  |
 
-### flare-on
+### [flare-on](flare-on/)
 
-| Writeup       | Files | Last commit | Path                                  |
-|---------------|-------|-------------|---------------------------------------|
-| Flare-On 2014 | 17    | 2026-11-18  | flare-on/2014/2014_FLAREOn_Challenges |
+| Writeup                                                 | Files | Last commit |
+|---------------------------------------------------------|-------|-------------|
+| [Flare-On 2014](flare-on/2014/2014_FLAREOn_Challenges/) | 17    | 2026-11-18  |
 
-### hackthebox
+### [hackthebox](hackthebox/)
 
-| Writeup    | Files | Last commit | Path                  |
-|------------|-------|-------------|-----------------------|
-| Cohort     | 4     | 2026-11-13  | hackthebox/cohort     |
-| Dancing    | 1     | 2026-10-23  | hackthebox/dancing    |
-| DoubleTake | 3     | 2026-11-16  | hackthebox/doubletake |
-| Fawn       | 1     | 2026-10-23  | hackthebox/fawn       |
-| Management | 1     | 2026-11-18  | hackthebox/management |
-| Meow       | 1     | 2026-10-23  | hackthebox/meow       |
+| Writeup                              | Files | Last commit |
+|--------------------------------------|-------|-------------|
+| [Cohort](hackthebox/cohort/)         | 4     | 2026-11-13  |
+| [Dancing](hackthebox/dancing/)       | 1     | 2026-10-23  |
+| [DoubleTake](hackthebox/doubletake/) | 3     | 2026-11-16  |
+| [Fawn](hackthebox/fawn/)             | 1     | 2026-10-23  |
+| [Management](hackthebox/management/) | 1     | 2026-11-18  |
+| [Meow](hackthebox/meow/)             | 1     | 2026-10-23  |
 
-### others
+### [others](others/)
 
-| Writeup                     | Files | Last commit | Path   |
-|-----------------------------|-------|-------------|--------|
-| WRITEUPS FROM OTHERS PEOPLE | 9     | 2026-11-18  | others |
+| Writeup                                | Files | Last commit |
+|----------------------------------------|-------|-------------|
+| [WRITEUPS FROM OTHERS PEOPLE](others/) | 9     | 2026-11-18  |
 
-### picoctf-trainings
+### [picoctf-trainings](picoctf-trainings/)
 
-| Writeup                      | Files | Last commit | Path                                                    |
-|------------------------------|-------|-------------|---------------------------------------------------------|
-| bookmarklet                  | 3     | 2026-11-18  | picoctf-trainings/web/easy/bookmarklet                  |
-| cookie-monster-secret-recipe | 3     | 2026-11-18  | picoctf-trainings/web/easy/cookie-monster-secret-recipe |
-| cookies                      | 3     | 2026-11-18  | picoctf-trainings/web/easy/cookies                      |
-| crack-the-gate               | 3     | 2026-11-18  | picoctf-trainings/web/easy/crack-the-gate               |
-| dont-use-client-side         | 4     | 2026-11-18  | picoctf-trainings/web/easy/dont-use-client-side         |
-| get-ahead                    | 3     | 2026-11-18  | picoctf-trainings/web/easy/get-ahead                    |
-| heap-dump                    | 4     | 2026-11-18  | picoctf-trainings/web/easy/heap-dump                    |
-| includes                     | 4     | 2026-11-18  | picoctf-trainings/web/easy/includes                     |
-| inspect-html                 | 3     | 2026-11-18  | picoctf-trainings/web/easy/inspect-html                 |
-| inspect-me                   | 3     | 2026-11-18  | picoctf-trainings/web/easy/inspect-me                   |
-| introtoburp                  | 3     | 2026-11-18  | picoctf-trainings/web/easy/introtoburp                  |
-| local-authority              | 3     | 2026-11-18  | picoctf-trainings/web/easy/local-authority              |
-| logon                        | 3     | 2026-11-18  | picoctf-trainings/web/easy/logon                        |
-| n0s4n1ty-1                   | 4     | 2026-11-18  | picoctf-trainings/web/easy/n0s4n1ty-1                   |
-| scavenger-hunt               | 3     | 2026-11-18  | picoctf-trainings/web/easy/scavenger-hunt               |
-| ssti1                        | 3     | 2026-11-18  | picoctf-trainings/web/easy/ssti1                        |
-| unminify                     | 3     | 2026-11-18  | picoctf-trainings/web/easy/unminify                     |
-| webdecode                    | 3     | 2026-11-18  | picoctf-trainings/web/easy/webdecode                    |
-| where-are-the-robots         | 3     | 2026-11-18  | picoctf-trainings/web/easy/where-are-the-robots         |
-| hashgate                     | 6     | 2026-11-18  | picoctf-trainings/web/medium/hashgate                   |
-| nofa                         | 7     | 2026-11-18  | picoctf-trainings/web/medium/nofa                       |
-| secret-box                   | 20    | 2026-11-18  | picoctf-trainings/web/medium/secret-box                 |
+| Writeup                                                                                  | Files | Last commit |
+|------------------------------------------------------------------------------------------|-------|-------------|
+| [bookmarklet](picoctf-trainings/web/easy/bookmarklet/)                                   | 3     | 2026-11-18  |
+| [cookie-monster-secret-recipe](picoctf-trainings/web/easy/cookie-monster-secret-recipe/) | 3     | 2026-11-18  |
+| [cookies](picoctf-trainings/web/easy/cookies/)                                           | 3     | 2026-11-18  |
+| [crack-the-gate](picoctf-trainings/web/easy/crack-the-gate/)                             | 3     | 2026-11-18  |
+| [dont-use-client-side](picoctf-trainings/web/easy/dont-use-client-side/)                 | 4     | 2026-11-18  |
+| [get-ahead](picoctf-trainings/web/easy/get-ahead/)                                       | 3     | 2026-11-18  |
+| [heap-dump](picoctf-trainings/web/easy/heap-dump/)                                       | 4     | 2026-11-18  |
+| [includes](picoctf-trainings/web/easy/includes/)                                         | 4     | 2026-11-18  |
+| [inspect-html](picoctf-trainings/web/easy/inspect-html/)                                 | 3     | 2026-11-18  |
+| [inspect-me](picoctf-trainings/web/easy/inspect-me/)                                     | 3     | 2026-11-18  |
+| [introtoburp](picoctf-trainings/web/easy/introtoburp/)                                   | 3     | 2026-11-18  |
+| [local-authority](picoctf-trainings/web/easy/local-authority/)                           | 3     | 2026-11-18  |
+| [logon](picoctf-trainings/web/easy/logon/)                                               | 3     | 2026-11-18  |
+| [n0s4n1ty-1](picoctf-trainings/web/easy/n0s4n1ty-1/)                                     | 4     | 2026-11-18  |
+| [scavenger-hunt](picoctf-trainings/web/easy/scavenger-hunt/)                             | 3     | 2026-11-18  |
+| [ssti1](picoctf-trainings/web/easy/ssti1/)                                               | 3     | 2026-11-18  |
+| [unminify](picoctf-trainings/web/easy/unminify/)                                         | 3     | 2026-11-18  |
+| [webdecode](picoctf-trainings/web/easy/webdecode/)                                       | 3     | 2026-11-18  |
+| [where-are-the-robots](picoctf-trainings/web/easy/where-are-the-robots/)                 | 3     | 2026-11-18  |
+| [hashgate](picoctf-trainings/web/medium/hashgate/)                                       | 6     | 2026-11-18  |
+| [nofa](picoctf-trainings/web/medium/nofa/)                                               | 7     | 2026-11-18  |
+| [secret-box](picoctf-trainings/web/medium/secret-box/)                                   | 20    | 2026-11-18  |
 
 <!-- INDEX:END -->

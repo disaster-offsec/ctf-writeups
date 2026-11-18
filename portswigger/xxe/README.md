@@ -43,6 +43,6 @@
 
 ## Labs
 
-| #  | Lab                                                           | Last commit | Path                                  |
-|----|---------------------------------------------------------------|-------------|---------------------------------------|
-| 01 | Lab: Exploiting XXE using external entities to retrieve files | 2026-10-26  | portswigger/xxe/01-xxe-retrieve-files |
+| #  | Lab                                                                                                     | Last commit |
+|----|---------------------------------------------------------------------------------------------------------|-------------|
+| 01 | [Lab: Exploiting XXE using external entities to retrieve files](portswigger/xxe/01-xxe-retrieve-files/) | 2026-10-26  |

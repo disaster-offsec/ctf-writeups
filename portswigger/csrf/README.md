@@ -61,11 +61,11 @@ email=wiener@normal-user.com
 
 ## Labs
 
-| #  | Lab                                                             | Last commit | Path                                                      |
-|----|-----------------------------------------------------------------|-------------|-----------------------------------------------------------|
-| 01 | Lab: CSRF vulnerability with no defenses                        | 2026-10-26  | portswigger/csrf/01-csrf-basic                            |
-| 02 | Lab: CSRF where token validation depends on request method      | 2026-11-18  | portswigger/csrf/02-csrf-token-validation                 |
-| 03 | Lab: CSRF where token validation depends on token being present | 2026-11-18  | portswigger/csrf/03-csrf-token-validation                 |
-| 04 | Lab: CSRF where token is not tied to user session               | 2026-11-18  | portswigger/csrf/04-csrf-user-session                     |
-| 05 | Lab: CSRF where token is tied to non-session cookie             | 2026-11-18  | portswigger/csrf/05-csrf-token-tied-to-non-session-cookie |
-| 06 | Lab: CSRF where token is duplicated in cookie                   | 2026-11-18  | portswigger/csrf/06-csrf-token-duplicated                 |
+| #  | Lab                                                                                                               | Last commit |
+|----|-------------------------------------------------------------------------------------------------------------------|-------------|
+| 01 | [Lab: CSRF vulnerability with no defenses](portswigger/csrf/01-csrf-basic/)                                       | 2026-10-26  |
+| 02 | [Lab: CSRF where token validation depends on request method](portswigger/csrf/02-csrf-token-validation/)          | 2026-11-18  |
+| 03 | [Lab: CSRF where token validation depends on token being present](portswigger/csrf/03-csrf-token-validation/)     | 2026-11-18  |
+| 04 | [Lab: CSRF where token is not tied to user session](portswigger/csrf/04-csrf-user-session/)                       | 2026-11-18  |
+| 05 | [Lab: CSRF where token is tied to non-session cookie](portswigger/csrf/05-csrf-token-tied-to-non-session-cookie/) | 2026-11-18  |
+| 06 | [Lab: CSRF where token is duplicated in cookie](portswigger/csrf/06-csrf-token-duplicated/)                       | 2026-11-18  |
