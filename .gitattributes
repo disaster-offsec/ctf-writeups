@@ -1,0 +1,33 @@
+# Чинит ложную детекцию языков GitHub (linguist).
+# Проблема: в репо райтапов показывались "Verilog 36.5%, AGS Script 20.6%".
+# Эти маски выключают подсчёт для бинарников и типичных виновников misdetection.
+
+# Картинки и документы не считаются кодом
+*.png   linguist-detectable=false
+*.svg   linguist-detectable=false
+*.pdf   linguist-detectable=false
+*.jpg   linguist-detectable=false
+*.jpeg  linguist-detectable=false
+*.gif   linguist-detectable=false
+
+# Частые источники ложной детекции в CTF-репозиториях
+*.v     linguist-detectable=false
+*.sv    linguist-detectable=false
+*.svh   linguist-detectable=false
+*.vh    linguist-detectable=false
+*.ags   linguist-detectable=false
+*.s     linguist-detectable=false
+*.S     linguist-detectable=false
+
+# Что реально должно считаться кодом/контентом
+*.md    linguist-detectable=true
+*.typ   linguist-detectable=true
+*.py    linguist-detectable=true
+*.go    linguist-detectable=true
+*.sh    linguist-detectable=true
+*.c     linguist-detectable=true
+*.cpp   linguist-detectable=true
+*.js    linguist-detectable=true
+
+# Если после коммита в языках всё ещё мусор — найди виновника и добавь его сюда:
+#   git ls-files | grep -Ei '\.(v|sv|ags|s)$'
