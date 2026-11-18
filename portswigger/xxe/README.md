@@ -38,3 +38,11 @@
 
 ## How to prevent XXE vulnerabilities
 Отключить в настройках XML-парсера разрешение внешних сущностей и поддержку XInclude.
+
+---
+
+## Labs
+
+| #  | Lab                                                           | Last commit | Path                                  |
+|----|---------------------------------------------------------------|-------------|---------------------------------------|
+| 01 | Lab: Exploiting XXE using external entities to retrieve files | 2026-10-26  | portswigger/xxe/01-xxe-retrieve-files |

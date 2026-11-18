@@ -54,3 +54,13 @@
 - **DNS Rebinding**: использовать свой домен при условии, что он резолвится
 - Обход через **Open Redirect**: Если он есть, можно заставить его
   перекинуть запрос на внутренний ресурс, что обойдет проверку `URL`
+
+---
+
+## Labs
+
+| #  | Lab                                             | Last commit | Path                                          |
+|----|-------------------------------------------------|-------------|-----------------------------------------------|
+| 01 | Lab: Basic SSRF against the local server        | 2026-10-25  | portswigger/ssrf/01-ssrf-basic                |
+| 02 | Lab: Basic SSRF against another back-end system | 2026-10-25  | portswigger/ssrf/02-ssrf-basic-backend-system |
+| 03 | Lab: SSRF with blacklist-based input filter     | 2026-10-26  | portswigger/ssrf/03-ssrf-blacklist            |
