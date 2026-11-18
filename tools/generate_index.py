@@ -61,18 +61,17 @@ def top_dirs() -> list[Path]:
     )
 
 
-def sub_writeups(parent: Path) -> list[Path]:
-    """Райтапы вглубь до 2 уровней: parent/lab или parent/category/lab."""
+def sub_writeups(parent: Path, depth: int = 3) -> list[Path]:
+    """Райтапы вглубь до 3 уровней:
+    parent/lab, parent/category/lab, parent/category/level/lab."""
     found = []
     for d in sorted(parent.iterdir()):
         if not d.is_dir() or d.name.startswith("."):
             continue
         if (d / "README.md").exists():
             found.append(d)
-            continue
-        for g in sorted(d.iterdir()):
-            if g.is_dir() and not g.name.startswith(".") and (g / "README.md").exists():
-                found.append(g)
+        elif depth > 1:
+            found.extend(sub_writeups(d, depth - 1))
     return found
 
 
@@ -120,9 +119,7 @@ def build_index() -> str:
     for d in top_dirs():
         if d.name == PORTSWIGGER:
             continue
-        if any(tag in d.name for tag in ("ctf", "CTF")) and d.name.lower().startswith(
-            ("avito", "kubok", "solar", "pico")
-        ):
+        if d.name.lower().startswith(("avito", "kubok", "solar")):
             known_events.append(d)
         else:
             known_other.append(d)

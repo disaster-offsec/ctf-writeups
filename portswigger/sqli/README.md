@@ -301,11 +301,16 @@ SELECT f();</code></pre></td>
 
 ## Labs
 
-| #  | Lab                                                                                      | Last commit | Path                             |
-|----|------------------------------------------------------------------------------------------|-------------|----------------------------------|
-| 07 | Lab: SQL injection UNION attack, determining the number of columns returned by the query | 2026-11-08  | portswigger/sqli/07-union-attack |
-| 08 | Lab: SQL injection UNION attack, retrieving data from other tables                       | 2026-11-08  | portswigger/sqli/08-union-attack |
-| 09 | Lab: SQL injection UNION attack, retrieving multiple values in a single column           | 2026-11-08  | portswigger/sqli/09-union-attack |
-| 10 | Lab: Blind SQL injection with conditional responses                                      | 2026-11-08  | portswigger/sqli/10-blind-sqli   |
-| 11 | Lab: Blind SQL injection with conditional errors                                         | 2026-11-08  | portswigger/sqli/11-blind-sqli   |
-| 12 | Lab: Blind SQL injection with time delays                                                | 2026-11-08  | portswigger/sqli/12-blind-sqli   |
+| #    | Lab                                                                                      | Last commit | Path                             |
+|------|------------------------------------------------------------------------------------------|-------------|----------------------------------|
+| 07   | Lab: SQL injection UNION attack, determining the number of columns returned by the query | 2026-11-08  | portswigger/sqli/07-union-attack |
+| 08   | Lab: SQL injection UNION attack, retrieving data from other tables                       | 2026-11-08  | portswigger/sqli/08-union-attack |
+| 09   | Lab: SQL injection UNION attack, retrieving multiple values in a single column           | 2026-11-08  | portswigger/sqli/09-union-attack |
+| 10   | Lab: Blind SQL injection with conditional responses                                      | 2026-11-08  | portswigger/sqli/10-blind-sqli   |
+| 11   | Lab: Blind SQL injection with conditional errors                                         | 2026-11-08  | portswigger/sqli/11-blind-sqli   |
+| 12   | Lab: Blind SQL injection with time delays                                                | 2026-11-08  | portswigger/sqli/12-blind-sqli   |
+| lab1 | SQL injection vulnerability in WHERE clause allowing retrieval of hidden data WRITEUP    | 2026-10-19  | portswigger/sqli/lab1            |
+| lab2 | Lab: SQL injection vulnerability allowing login bypass                                   | 2026-10-19  | portswigger/sqli/lab2            |
+| lab3 | Lab: SQL injection attack, querying the database type and version on Oracle              | 2026-10-20  | portswigger/sqli/lab3            |
+| lab4 | Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft | 2026-10-20  | portswigger/sqli/lab4            |
+| lab5 | Lab: SQL injection attack, listing the database contents on non-Oracle databases         | 2026-10-21  | portswigger/sqli/lab5            |
