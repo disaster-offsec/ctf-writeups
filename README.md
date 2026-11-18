@@ -102,30 +102,47 @@ python3 tools/generate_index.py   # обновить индексные табл
 
 ## CTF events
 
-### avitoCTF2026
+### avitoctf-2026
+
+| Writeup         | Files | Last commit | Path                          |
+|-----------------|-------|-------------|-------------------------------|
+| Сопромёд: метро | 5     | -           | avitoctf-2026/sopromyod-metro |
+
+### kubok-ctf-2026
+
+| Writeup                                     | Files | Last commit | Path                     |
+|---------------------------------------------|-------|-------------|--------------------------|
+| compuuuter — writeup                        | 10    | -           | kubok-ctf-2026/computer  |
+| Электронный журнал — райтап (web, 1000 pts) | 29    | -           | kubok-ctf-2026/eljournal |
+| MeowSim: Schrödinger E... — райтап          | 3     | -           | kubok-ctf-2026/meow-sim  |
+| Райтап: реверс-инжиниринг задания mmm       | 8     | -           | kubok-ctf-2026/mmm       |
+| Weird RSA — райтап                          | 5     | -           | kubok-ctf-2026/weird-rsa |
+
+### picoctf-trainings
 
 | Writeup | Files | Last commit | Path |
 |---------|-------|-------------|------|
 
-### kubok-ctf2026
+### solarctf-2026
 
-| Writeup                                     | Files | Last commit | Path                    |
-|---------------------------------------------|-------|-------------|-------------------------|
-| compuuuter — writeup                        | 10    | 2026-10-31  | kubok-ctf2026/computer  |
-| Электронный журнал — райтап (web, 1000 pts) | 29    | 2026-10-31  | kubok-ctf2026/eljournal |
-| MeowSim: Schrödinger E... — райтап          | 3     | 2026-10-31  | kubok-ctf2026/meow-sim  |
-| Райтап: реверс-инжиниринг задания mmm       | 8     | 2026-10-31  | kubok-ctf2026/mmm       |
-| Weird RSA — райтап                          | 5     | 2026-10-31  | kubok-ctf2026/weird-rsa |
-
-### picoCTF{TRAININGS}
-
-| Writeup | Files | Last commit | Path |
-|---------|-------|-------------|------|
-
-### solarctf2026
-
-| Writeup | Files | Last commit | Path |
-|---------|-------|-------------|------|
+| Writeup                                     | Files | Last commit | Path                                       |
+|---------------------------------------------|-------|-------------|--------------------------------------------|
+| Writeup — Kommunalki (web)                  | 1     | -           | solarctf-2026/_unsorted/kommunalki         |
+| Невероятная утка                            | 1     | -           | solarctf-2026/_unsorted/neveroyatnaya-utka |
+| Нейропитомец                                | 1     | -           | solarctf-2026/_unsorted/neyropitomets      |
+| Новый телефон                               | 1     | -           | solarctf-2026/_unsorted/novyy-telefon      |
+| Out of frame — Майя                         | 1     | -           | solarctf-2026/_unsorted/out-of-frame       |
+| PBX «Солярис-3» — разбор ночного дампа      | 1     | -           | solarctf-2026/_unsorted/pbx-sabotage       |
+| Что было в архиве                           | 1     | -           | solarctf-2026/_unsorted/poslednee-delo     |
+| Пустота — решение                           | 1     | -           | solarctf-2026/_unsorted/pustota            |
+| Шах и мат                                   | 1     | -           | solarctf-2026/_unsorted/shakh-i-mat        |
+| Writeup — Zero Report (SolarCTF 2026)       | 5     | -           | solarctf-2026/crypto/0-report              |
+| Writeup — Пропавший архив (SolarCTF 2026)   | 5     | -           | solarctf-2026/crypto/lostarch              |
+| Writeup — РакушкаBreach (SolarCTF 2026)     | 2     | -           | solarctf-2026/forensics/breach             |
+| Writeup — Локпик / Lockpick (SolarCTF 2026) | 5     | -           | solarctf-2026/misc/lockpick                |
+| Writeup — Вентилятор303 (SolarCTF 2026)     | 2     | -           | solarctf-2026/misc/vent303                 |
+| Writeup — Ткач / Weaver (SolarCTF 2026)     | 10    | -           | solarctf-2026/reverse/tkach                |
+| Writeup — Vintage Bank (SolarCTF 2026)      | 2     | -           | solarctf-2026/web/vintage_bank             |
 
 ## Platforms & trainings
 
@@ -142,9 +159,9 @@ python3 tools/generate_index.py   # обновить индексные табл
 
 ### flare-on
 
-| Writeup       | Files | Last commit | Path                               |
-|---------------|-------|-------------|------------------------------------|
-| Flare-On 2014 | 17    | -           | flare-on/1/2014_FLAREOn_Challenges |
+| Writeup       | Files | Last commit | Path                                  |
+|---------------|-------|-------------|---------------------------------------|
+| Flare-On 2014 | 17    | -           | flare-on/2014/2014_FLAREOn_Challenges |
 
 ### hackthebox
 
@@ -154,13 +171,13 @@ python3 tools/generate_index.py   # обновить индексные табл
 | Dancing    | 1     | 2026-10-23  | hackthebox/dancing    |
 | DoubleTake | 3     | 2026-11-16  | hackthebox/doubletake |
 | Fawn       | 1     | 2026-10-23  | hackthebox/fawn       |
-| Management | 1     | -           | hackthebox/management |
+| Management | 1     | 2026-11-18  | hackthebox/management |
 | Meow       | 1     | 2026-10-23  | hackthebox/meow       |
 
 ### others
 
 | Writeup                     | Files | Last commit | Path   |
 |-----------------------------|-------|-------------|--------|
-| WRITEUPS FROM OTHERS PEOPLE | 18    | 2026-10-18  | others |
+| WRITEUPS FROM OTHERS PEOPLE | 9     | 2026-10-18  | others |
 
 <!-- INDEX:END -->
