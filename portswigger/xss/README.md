@@ -43,10 +43,10 @@ XSS — уязвимость, позволяющая внедрить вредо
 
 ## Labs
 
-| #  | Lab                                                                                                        | Last commit |
-|----|------------------------------------------------------------------------------------------------------------|-------------|
-| 01 | [Lab: Reflected XSS into HTML context with nothing encoded](portswigger/xss/01-reflected-xss/)             | 2026-11-18  |
-| 02 | [Lab: Stored XSS into HTML context with nothing encoded](portswigger/xss/02-stored-xss/)                   | 2026-11-18  |
-| 03 | [Lab: DOM XSS in document.write sink using source location.search](portswigger/xss/03-dom-xss/)            | 2026-11-18  |
-| 04 | [Lab: DOM XSS in innerHTML sink using source location.search](portswigger/xss/04-dom-xss/)                 | 2026-11-18  |
-| 05 | [Reflected XSS into HTML context with most tags and attributes blocked](portswigger/xss/05-reflected-xss/) | 2026-11-18  |
+| #  | Lab                                                                                        | Last commit |
+|----|--------------------------------------------------------------------------------------------|-------------|
+| 01 | [Lab: Reflected XSS into HTML context with nothing encoded](01-reflected-xss/)             | 2026-11-18  |
+| 02 | [Lab: Stored XSS into HTML context with nothing encoded](02-stored-xss/)                   | 2026-11-18  |
+| 03 | [Lab: DOM XSS in document.write sink using source location.search](03-dom-xss/)            | 2026-11-18  |
+| 04 | [Lab: DOM XSS in innerHTML sink using source location.search](04-dom-xss/)                 | 2026-11-18  |
+| 05 | [Reflected XSS into HTML context with most tags and attributes blocked](05-reflected-xss/) | 2026-11-18  |

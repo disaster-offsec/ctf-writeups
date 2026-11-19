@@ -59,8 +59,8 @@
 
 ## Labs
 
-| #  | Lab                                                                                               | Last commit |
-|----|---------------------------------------------------------------------------------------------------|-------------|
-| 01 | [Lab: Basic SSRF against the local server](portswigger/ssrf/01-ssrf-basic/)                       | 2026-10-25  |
-| 02 | [Lab: Basic SSRF against another back-end system](portswigger/ssrf/02-ssrf-basic-backend-system/) | 2026-10-25  |
-| 03 | [Lab: SSRF with blacklist-based input filter](portswigger/ssrf/03-ssrf-blacklist/)                | 2026-10-26  |
+| #  | Lab                                                                              | Last commit |
+|----|----------------------------------------------------------------------------------|-------------|
+| 01 | [Lab: Basic SSRF against the local server](01-ssrf-basic/)                       | 2026-10-25  |
+| 02 | [Lab: Basic SSRF against another back-end system](02-ssrf-basic-backend-system/) | 2026-10-25  |
+| 03 | [Lab: SSRF with blacklist-based input filter](03-ssrf-blacklist/)                | 2026-10-26  |
