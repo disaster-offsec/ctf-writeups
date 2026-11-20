@@ -242,11 +242,12 @@ Task 14–16: `ldd --version` → **glibc 2.35**. Уязвимость — пе�
 
 ## References
 
-- [0xdf: TwoMillion HTB writeup](https://0xdf.gitlab.io/2023/06/10/htb-twomillion.html)
+- [0xdf: TwoMillion HTB writeup](https://0xdf.gitlab.io/2023/06/07/htb-twomillion.html)
 - [NVD: CVE-2023-0386](https://nvd.nist.gov/vuln/detail/CVE-2023-0386)
 - [xkaneiki/CVE-2023-0386 PoC](https://github.com/xkaneiki/CVE-2023-0386)
 - [blasty/CVE-2023-4911 (Looney Tunables)](https://github.com/blasty/CVE-2023-4911)
 - [OWASP: Mass Assignment](https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html)
 - [OWASP: OS Command Injection Defense](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html)
 - [PortSwigger: Access control vulnerabilities](https://portswigger.net/web-security/access-control)
+- [JS Deobfuscator](https://thanhle.io.vn/de4js/)
 

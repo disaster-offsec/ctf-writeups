@@ -126,14 +126,14 @@ GitHub `blob`/`tree`-URL и корневые пути переводит в от
 
 ### [hackthebox](hackthebox/)
 
-| Writeup                              | Files | Last commit |
-|--------------------------------------|-------|-------------|
-| [Cohort](hackthebox/cohort/)         | 4     | 2026-11-13  |
-| [Dancing](hackthebox/dancing/)       | 1     | 2026-10-23  |
-| [DoubleTake](hackthebox/doubletake/) | 3     | 2026-11-16  |
-| [Fawn](hackthebox/fawn/)             | 1     | 2026-10-23  |
-| [Management](hackthebox/management/) | 1     | 2026-11-18  |
-| [Meow](hackthebox/meow/)             | 1     | 2026-10-23  |
+| Writeup                               | Files | Last commit |
+|---------------------------------------|-------|-------------|
+| [Cohort](hackthebox/cohort/)          | 4     | 2026-11-13  |
+| [Dancing](hackthebox/dancing/)        | 1     | 2026-10-23  |
+| [DoubleTake](hackthebox/doubletake/)  | 3     | 2026-11-16  |
+| [Fawn](hackthebox/fawn/)              | 1     | 2026-10-23  |
+| [Meow](hackthebox/meow/)              | 1     | 2026-10-23  |
+| [TwoMillion](hackthebox/two-million/) | 2     | 2026-11-20  |
 
 ### [others](others/)
 
