@@ -761,7 +761,7 @@ def main() -> int:
             elif res in ("nomark", "partial"):
                 n_warn += 1
                 print(f"  ! {rel}: {msg}")
-        print(f"\nПометлено done: {n_done}, заглушек пропущено: {n_stub}"
+        print(f"\nПомечено done: {n_done}, заглушек пропущено: {n_stub}"
               + (f", индексов пропущено: {n_index}" if n_index else "")
               + (f", с оговорками: {n_warn}" if n_warn else ""))
         print("Дальше: python tools/generate_index.py — пересчитает дашборд из статусов.")

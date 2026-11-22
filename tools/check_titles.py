@@ -9,6 +9,7 @@
   C. Безликий заголовок в README:  lab1, Lab 2, задача 3 ...
   D. Безликое имя папки:           lab1, task-2, writeup_3 ...
   E. Заглушка: в README есть маркер черновика (draft / черновик / TODO / TBD)
+  F. Код-блок без языка подсветки: открывающая ограда ``` без ```python/bash/...
 
 Печатает готовый todo-лист. Порядок чинить: C/D (сразу видно в индексе на
 главной) -> A/B -> E (заглушки, план "по одному в день").
@@ -57,6 +58,30 @@ def readme_heading(folder: Path) -> str:
     return ""
 
 
+def unlanged_blocks(folder: Path) -> list[int]:
+    """Номера строк открытых оград ``` без языка подсветки.
+
+    Закрывающие ограды пусты по определению: считаем только те,
+    которые открывают блок (чётное чередование).
+    """
+    try:
+        text = strip_index((folder / "README.md").read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    out, inb = [], False
+    for i, line in enumerate(text.splitlines(), 1):
+        s = line.strip()
+        if not s.startswith("```"):
+            continue
+        if not inb:
+            if s == "```":
+                out.append(i)  # открытие без языка
+            inb = True
+        else:
+            inb = False
+    return out
+
+
 def is_draft(folder: Path) -> bool:
     try:
         text = (folder / "README.md").read_text(encoding="utf-8")
@@ -75,6 +100,11 @@ def check_dir(d: Path, problems: dict[str, list[str]]) -> None:
         problems["D. безликое имя папки"].append(rel(d))
     if is_draft(d):
         problems["E. заглушка (черновик)"].append(rel(d))
+    lines = unlanged_blocks(d)
+    if lines:
+        problems["F. код-блок без языка"].append(
+            f"{rel(d)} — строки {', '.join(map(str, lines[:8]))}"
+            + ("..." if len(lines) > 8 else ""))
 
 
 def visit(d: Path, problems: dict[str, list[str]], depth: int = DEPTH) -> None:
