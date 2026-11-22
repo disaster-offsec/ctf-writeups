@@ -72,7 +72,7 @@ EVENT_TITLES = {
 YEAR_RE = re.compile(r"^(.*?)-(\d{4})$")
 SEASON_RE = re.compile(r"^(.*?)-(\d{1,2})$")
 DRAFT_MARK = re.compile(
-    r"\b(?:draft|черновик|черновая|в работе|todo|tbd)(?![\w.\-/])", re.I)
+    r"\b(?:draft|черновик|черновая|в работе|todo|tbd)(?![\w/\-]|\.\w)", re.I)
 WALK_DEPTH = 3  # райтапы ищем вглубь до 3 уровней (категория/уровень/таск)
 
 STATUS_DONE = "done"
