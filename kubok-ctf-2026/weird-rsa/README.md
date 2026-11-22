@@ -223,7 +223,7 @@ print(flag.decode())
 
 Результат:
 
-```
+```text
 ctfcup{862b7b348272087bd9cc0613646db566}
 ```
 

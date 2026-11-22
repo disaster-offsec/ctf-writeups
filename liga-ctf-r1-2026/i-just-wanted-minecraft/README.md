@@ -262,7 +262,7 @@ chmod 644 /etc/cron.d/mc-backup-sync
 cp /usr/share/mc-backup-tool/backup-server.pub /root/.ssh/authorized_keys
 ```
 Читаем публичный ключ из `data/usr/share/mc-backup-tool/backup-server.pub`:
-```
+```text
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKQneCF/+pFNeT019R1PuymSqF3x1QYNCsG+zOtOX078 backup@mc-backup-server
 ```
 Проверка: `ssh-keygen -l -f backup-server.pub`: 

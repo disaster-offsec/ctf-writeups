@@ -196,7 +196,7 @@ for s in range(90, 101):
 
 ## Флаг
 
-```
+```text
 ctfcup{cat_0bserv3r_92}
 ```
 

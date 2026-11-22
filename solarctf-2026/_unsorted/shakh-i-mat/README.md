@@ -116,6 +116,6 @@ WS‑сообщению `ws://vault:4000/feed` возвращает
 
 ## Flag
 
-```
+```text
 SOLARCTF{v4ult_0f_th3_b0ard}
 ```

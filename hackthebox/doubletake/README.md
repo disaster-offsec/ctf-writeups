@@ -26,7 +26,7 @@ sudo nmap -A -sC -sV -Pn --top-ports 20 -oN doubletake_scan.txt 10.129.180.242
 
 Результат:
 
-```
+```text
 Starting Nmap 7.95 ( https://nmap.org ) at 2026-11-16 17:21 MSK
 Nmap scan report for 10.129.180.242
 Host is up (0.26s latency).

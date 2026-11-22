@@ -109,7 +109,7 @@ class Payload:
 Формат dumbdbm: `.dir` — текстовый индекс (строки `repr(key), (offset, size)`),
 `.dat` — сырые байты значений. Наш `.dir`:
 
-```
+```text
 'entries', (0, 153)
 ```
 

