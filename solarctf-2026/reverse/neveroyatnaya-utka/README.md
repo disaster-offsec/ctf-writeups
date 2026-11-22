@@ -1,18 +1,9 @@
----
-title: "Невероятная утка (Unreal Duck)"
-ctf: "SolarCTF"
-date: 2026-10-18
-category: reverse
-difficulty: medium-hard
-flag_format: "solarctf{...}"
----
-
 # Невероятная утка
 
 | | |
 |---|---|
 | **Платформа / Событие** | Solar CTF 2026 |
-| **Категория** | _unsorted |
+| **Категория** | reverse |
 | **Сложность** | — |
 | **Статус** | done |
 | **Дата решения** | 2026-11-01 |

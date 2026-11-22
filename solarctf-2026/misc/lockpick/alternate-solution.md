@@ -1,3 +1,6 @@
+> Альтернативное решение — разбор комьюнити MAI CTF, сохранён как
+> материал для подготовки. Авторский райтап: [README.md](README.md).
+
 # lockpick.bin — FPGA bitstream, 32-bit unlock key (reverse / hardware)
 
 ## Условие

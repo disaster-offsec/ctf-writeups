@@ -1,17 +1,9 @@
----
-title: "Out of frame — Майя"
-ctf: "SolarCTF"
-date: 2026-10-17
-category: osint
-flag_format: "SOLARCTF{...}"
----
-
 # Out of frame — Майя
 
 | | |
 |---|---|
 | **Платформа / Событие** | Solar CTF 2026 |
-| **Категория** | _unsorted |
+| **Категория** | osint |
 | **Сложность** | — |
 | **Статус** | done |
 | **Дата решения** | 2026-11-01 |

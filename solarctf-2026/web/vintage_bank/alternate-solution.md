@@ -1,3 +1,6 @@
+> Альтернативное решение — разбор комьюнити MAI CTF, сохранён как
+> материал для подготовки. Авторский райтап: [README.md](README.md).
+
 # Writeup — Vintage Bank (SolarCTF)
 
 **Флаг:** `SOLARCTF{idor_s4fe_d3posit_b0x}`

@@ -35,7 +35,11 @@ MARK_END = "<!-- INDEX:END -->"
 GENERIC_TITLE = re.compile(
     r"^(?:lab|task|задача|writeup|райтап)[\s_\-]*(?:\d+)?$", re.I)
 GENERIC_DIR = re.compile(r"^(?:lab|task|writeup)[\-_]?\d+$", re.I)
-DRAFT_MARK = re.compile(r"\b(?:draft|черновик|черновая|в работе|todo|tbd)\b", re.I)
+# После маркера не идут буквы/цифры/точка/дефис: не ловим имена файлов
+# (todo.txt, tbd.md) и слова вроде "drafts" в статусах, но ловим
+# «TODO:», «черновик,» и само «draft».
+DRAFT_MARK = re.compile(
+    r"\b(?:draft|черновик|черновая|в работе|todo|tbd)(?![\w.\-/])", re.I)
 
 # Ограда ```: до 7 пробелов отступа (в т.ч. внутри пункта списка),
 # опциональный маркер списка перед ней, 3+ бектика, опциональный язык

@@ -3,21 +3,7 @@
 Райтапы задач: TL;DR → Steps → Why it works → Defense. Индекс ниже ведётся скриптом `tools/generate_index.py` — между маркерами руками не править.
 
 <!-- INDEX:START -->
-Solved: 15/16 · drafts: 1
-
-### [_unsorted](_unsorted/) — 9/9
-
-| Task                                                              | Status | Last commit |
-|-------------------------------------------------------------------|--------|-------------|
-| [Writeup — Kommunalki (web)](_unsorted/kommunalki/)               | done   | 2026-11-22  |
-| [Невероятная утка](_unsorted/neveroyatnaya-utka/)                 | done   | 2026-11-22  |
-| [Нейропитомец](_unsorted/neyropitomets/)                          | done   | 2026-11-22  |
-| [Новый телефон](_unsorted/novyy-telefon/)                         | done   | 2026-11-22  |
-| [Out of frame — Майя](_unsorted/out-of-frame/)                    | done   | 2026-11-22  |
-| [PBX «Солярис-3» — разбор ночного дампа](_unsorted/pbx-sabotage/) | done   | 2026-11-22  |
-| [Что было в архиве](_unsorted/poslednee-delo/)                    | done   | 2026-11-22  |
-| [Пустота — решение](_unsorted/pustota/)                           | done   | 2026-11-22  |
-| [Шах и мат](_unsorted/shakh-i-mat/)                               | done   | 2026-11-22  |
+Solved: 16/16
 
 ### [crypto](crypto/) — 2/2
 
@@ -26,11 +12,13 @@ Solved: 15/16 · drafts: 1
 | [Writeup — Zero Report (SolarCTF 2026)](crypto/0-report/)     | done   | 2026-11-22  |
 | [Writeup — Пропавший архив (SolarCTF 2026)](crypto/lostarch/) | done   | 2026-11-22  |
 
-### [forensics](forensics/) — 0/1 · 1 draft
+### [forensics](forensics/) — 3/3
 
-| Task                                                         | Status | Last commit |
-|--------------------------------------------------------------|--------|-------------|
-| [Writeup — РакушкаBreach (SolarCTF 2026)](forensics/breach/) | draft  | 2026-11-22  |
+| Task                                                              | Status | Last commit |
+|-------------------------------------------------------------------|--------|-------------|
+| [Writeup — РакушкаBreach (SolarCTF 2026)](forensics/breach/)      | done   | 2026-11-22  |
+| [PBX «Солярис-3» — разбор ночного дампа](forensics/pbx-sabotage/) | done   | -           |
+| [Пустота — решение](forensics/pustota/)                           | done   | -           |
 
 ### [misc](misc/) — 2/2
 
@@ -39,15 +27,27 @@ Solved: 15/16 · drafts: 1
 | [Writeup — Локпик / Lockpick (SolarCTF 2026)](misc/lockpick/) | done   | 2026-11-22  |
 | [Writeup — Вентилятор303 (SolarCTF 2026)](misc/vent303/)      | done   | 2026-11-22  |
 
-### [reverse](reverse/) — 1/1
+### [osint](osint/) — 2/2
+
+| Task                                       | Status | Last commit |
+|--------------------------------------------|--------|-------------|
+| [Новый телефон](osint/novyy-telefon/)      | done   | -           |
+| [Out of frame — Майя](osint/out-of-frame/) | done   | -           |
+
+### [reverse](reverse/) — 4/4
 
 | Task                                                      | Status | Last commit |
 |-----------------------------------------------------------|--------|-------------|
+| [Невероятная утка](reverse/neveroyatnaya-utka/)           | done   | -           |
+| [Нейропитомец](reverse/neyropitomets/)                    | done   | -           |
+| [Что было в архиве](reverse/poslednee-delo/)              | done   | -           |
 | [Writeup — Ткач / Weaver (SolarCTF 2026)](reverse/tkach/) | done   | 2026-11-22  |
 
-### [web](web/) — 1/1
+### [web](web/) — 3/3
 
 | Task                                                        | Status | Last commit |
 |-------------------------------------------------------------|--------|-------------|
+| [Writeup — Kommunalki (web)](web/kommunalki/)               | done   | -           |
+| [Шах и мат](web/shakh-i-mat/)                               | done   | -           |
 | [Writeup — Vintage Bank (SolarCTF 2026)](web/vintage_bank/) | done   | 2026-11-22  |
 <!-- INDEX:END -->

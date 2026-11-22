@@ -7,16 +7,22 @@ portswigger, solarctf, kubok...), начинаются сразу с «# Заг�
   - папки выглядят по-разному (где-то шапка, где-то нет);
   - tools/typ2readme.py --mark-done не находит строку «Статус».
 
-Что делает скрипт для каждого README без строки «Статус»:
+Что делает скрипт для каждого README без полной шапки:
   - если в файле уже есть таблица с «Платформа / Событие» — вставляет
-    в неё одну строку «| **Статус** | X |» (после «Сложность»);
+    в неё только недостающие канонические строки (Статус после «Сложности»);
+  - если есть другая таблица (легаси «Поле | Значение», мини-таблица
+    заглушки) — вставляет в неё недостающие строки
+    «Платформа / Событие / Категория / Статус / Дата решения / Ссылка»
+    сразу после разделителя |---|;
   - иначе — добавляет полную шапку-таблицу сразу после первого
     заголовка «# ...» (или в начало файла, если заголовка нет).
     Событие берётся из имени корневой папки (generate_index.event_title),
-    категория — из второй папки пути, если глубина >= 3.
+    категория — из второй папки пути, если таск глубже двух уровней
+    (portswigger/sqli/lab — sqli; hackthebox/meow — «—»).
 
-README со строкой «Статус» не трогаются. Дашборды (INDEX:START) и
-tools/templates пропускаются. Только стандартная библиотека.
+README с полной шапкой не трогаются; у неполных дозаполняются только
+недостающие строки. Дашборды (INDEX:START) и tools/templates пропускаются.
+Только стандартная библиотека.
 
 Примеры:
   python3 tools/ensure_header.py --list
@@ -61,8 +67,9 @@ def event_title(name: str) -> str:
 def header_table(rel: Path, status: str, date: str) -> str:
     parts = rel.parts[:-1]  # без README.md
     event = event_title(parts[0]) if parts else "—"
-    # категория — вторая папка, только если таск глубже (portswigger/sqli/lab),
-    # у двухуровневых путей (hackthebox/meow) второй папки-категории нет
+    # категория — вторая папка, только если таск глубже двух уровней
+    # (portswigger/sqli/lab — sqli); у двухуровневых путей (hackthebox/meow)
+    # второй папки-категории нет
     category = parts[1] if len(parts) >= 3 else "—"
     return (
         "| | |\n"
@@ -76,16 +83,56 @@ def header_table(rel: Path, status: str, date: str) -> str:
     )
 
 
+def row_name(line: str) -> str:
+    """Имя первой ячейки строки таблицы без ** и пробелов, в нижнем регистре."""
+    cells = [c.strip() for c in line.strip().strip("|").split("|")]
+    if not cells:
+        return ""
+    return cells[0].replace("*", "").strip().lower()
+
+
+def missing_rows(text: str, rel: Path, status: str, date: str) -> list[str]:
+    """Канонические строки шапки, которых нет в существующей таблице."""
+    have = {row_name(l) for l in text.splitlines() if l.lstrip().startswith("|")}
+    parts = rel.parts[:-1]
+    event = event_title(parts[0]) if parts else "—"
+    category = parts[1] if len(parts) >= 3 else "—"
+    values = [
+        ("платформа / событие", f"| **Платформа / Событие** | {event} |"),
+        ("категория", f"| **Категория** | {category} |"),
+        ("статус", f"| **Статус** | {status} |"),
+        ("дата решения", f"| **Дата решения** | {date} |"),
+        ("ссылка на таск", "| **Ссылка на таск** | — |"),
+    ]
+    return [line for key, line in values if key not in have]
+
+
+def insert_after_separator(text: str, rows: list[str]) -> str:
+    """Вставить строки после первой разделительной строки таблицы |---|.
+
+    Разделитель обязан содержать «-»: строка «| | |» (пустая шапка
+    таблицы) — это НЕ разделитель."""
+    lines = text.splitlines()
+    for i, l in enumerate(lines):
+        if re.match(r"^\s*\|(?=.*-)[-: |]*\|\s*$", l):
+            return "\n".join(lines[:i + 1] + rows + lines[i + 1:]) + "\n"
+    return text
+
+
 def patch(text: str, rel: Path, status: str, date: str) -> str:
-    """Новый текст README: либо +строка статуса, либо +полная шапка."""
+    """Новый текст README: дозаполнить таблицу или добавить шапку."""
+    rows = missing_rows(text, rel, status, date)
+    if not rows:
+        return text
     if EVENT_CELL.search(text):
         m = DIFF_CELL.search(text) or CAT_CELL.search(text)
         if m:  # вставить после Сложности/Категории
-            return text[:m.end()] + f"\n| **Статус** | {status} |" + text[m.end():]
-        m = re.search(r"^\|[-: |]+\|[^\n]*\n", text, re.M)  # после |---| строки
-        if m:
-            return text[:m.end()] + f"| **Статус** | {status} |\n" + text[m.end():]
-        return f"| **Статус** | {status} |\n\n" + text
+            return text[:m.end()] + "\n" + "\n".join(rows) + text[m.end():]
+        return insert_after_separator(text, rows)
+    if re.search(r"^\s*\|(?=.*-)[-: |]*\|\s*$", text, re.M):
+        # есть какая-то таблица (легаси «Поле | Значение», заглушка) —
+        # дозаполняем её, а не плодим вторую рядом
+        return insert_after_separator(text, rows)
     table = header_table(rel, status, date)
     m = H1_RE.search(text)
     if m:  # шапка после первого «# Заголовок»
@@ -131,12 +178,16 @@ def main() -> int:
     for rp in files:
         rel = rp.relative_to(ROOT).as_posix()
         text = rp.read_text(encoding="utf-8", errors="replace")
-        if STATUS_CELL.search(text):
+        rows = missing_rows(text, rp.relative_to(ROOT), args.status, args.date)
+        if not rows:
             n_skip += 1
             continue
         if EVENT_CELL.search(text):
             n_cell += 1
-            act = f"добавлю строку Статус | {args.status}"
+            act = f"дополню шапку: {len(rows)} строк(и), Статус | {args.status}"
+        elif re.search(r"^\s*\|(?=.*-)[-: |]*\|\s*$", text, re.M):
+            n_cell += 1
+            act = f"дополню существующую таблицу: {len(rows)} строк(и)"
         else:
             n_new += 1
             act = f"добавлю шапку (Статус | {args.status})"
@@ -144,11 +195,9 @@ def main() -> int:
         if not (args.list or args.dry_run):
             rp.write_text(patch(text, rp.relative_to(ROOT), args.status,
                                 args.date), encoding="utf-8", newline="\n")
-    if not (args.list or args.dry_run):
-        pass
     word = "внесу изменения" if (args.list or args.dry_run) else "изменено"
-    print(f"\n{word}: шапок {n_new}, строк статуса {n_cell}, "
-          f"уже есть статус: {n_skip}")
+    print(f"\n{word}: шапок {n_new}, таблиц дополнено {n_cell}, "
+          f"полная шапка уже есть: {n_skip}")
     if not (args.list or args.dry_run):
         print("Дальше: python tools/generate_index.py — пересчитает дашборд.")
     return 0

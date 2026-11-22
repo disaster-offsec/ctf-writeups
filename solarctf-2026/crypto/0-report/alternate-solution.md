@@ -1,3 +1,6 @@
+> Альтернативное решение — разбор комьюнити MAI CTF, сохранён как
+> материал для подготовки. Авторский райтап: [README.md](README.md).
+
 # Zero Report — writeup
 
 **Флаг:** `SOLARCTF{y0u_h4sh3d_th3_wr0ng_th1ng}`

@@ -1,20 +1,9 @@
----
-title: "Шах и мат"
-ctf: "SolarCTF 2026"
-date: 2026-10-18
-category: web
-difficulty: hard
-points: null
-flag_format: "SOLARCTF{...}"
-author: "opencode"
----
-
 # Шах и мат
 
 | | |
 |---|---|
 | **Платформа / Событие** | Solar CTF 2026 |
-| **Категория** | _unsorted |
+| **Категория** | web |
 | **Сложность** | — |
 | **Статус** | done |
 | **Дата решения** | 2026-11-01 |

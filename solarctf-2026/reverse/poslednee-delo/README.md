@@ -11,7 +11,7 @@ SOLARCTF{s0l4r_4ray_ds3c_r3s34rch}
 | | |
 |---|---|
 | **Платформа / Событие** | Solar CTF 2026 |
-| **Категория** | _unsorted |
+| **Категория** | reverse |
 | **Сложность** | — |
 | **Статус** | done |
 | **Дата решения** | 2026-11-01 |
@@ -234,9 +234,9 @@ physical = (
 
 # Как воспроизвести решение
 
-Исходные файлы: [the_last_case.zip](library-file\:libfile_4347bbf3a42481919d046dfc21de7eaf).
+Исходные файлы: `the_last_case.zip`.
 
-Пакет решения: [the_last_case_solution.zip](library-file\:libfile_ba6dc2c5b7448191abbff9657b7f2b29).
+Пакет решения: `the_last_case_solution.zip`.
 
 После распаковки пакета перейти в каталог со скриптами. Чтобы проверить сохранённые наблюдения, достаточно стандартного Python:
 

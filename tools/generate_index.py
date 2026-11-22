@@ -42,9 +42,11 @@ EXCLUDE_TOP = {"tools", "templates", ".git", ".github"}
 PORTSWIGGER = "portswigger"
 
 # Папки-платформы (не CTF-события): попадают в "Platforms & trainings".
+# События — отдельный список не нужен: всё, что оканчивается на год
+# (flare-on-2014, solarctf-2026), — событие (см. is_event).
 PLATFORM_DIRS = {
     PORTSWIGGER, "hackthebox", "picoctf", "picoctf-trainings",
-    "bootcamp", "flare-on", "tryhackme", "vulnlab", "others",
+    "bootcamp", "standoff-bootcamp", "tryhackme", "vulnlab", "others",
 }
 
 # Названия для заголовков README (ключ — имя папки без года). Если папка
@@ -68,7 +70,9 @@ EVENT_TITLES = {
 }
 
 YEAR_RE = re.compile(r"^(.*?)-(\d{4})$")
-DRAFT_MARK = re.compile(r"\b(?:draft|черновик|черновая|в работе|todo|tbd)\b", re.I)
+SEASON_RE = re.compile(r"^(.*?)-(\d{1,2})$")
+DRAFT_MARK = re.compile(
+    r"\b(?:draft|черновик|черновая|в работе|todo|tbd)(?![\w.\-/])", re.I)
 WALK_DEPTH = 3  # райтапы ищем вглубь до 3 уровней (категория/уровень/таск)
 
 STATUS_DONE = "done"
@@ -77,18 +81,31 @@ STATUS_MISSING = "—"
 
 
 def is_event(name: str) -> bool:
-    """CTF-событие vs платформа: solarctf-2026, liga-ctf-r1-2026, kubok..."""
+    """CTF-событие vs платформа.
+
+    Событие — всё, что оканчивается на год: flare-on-2014, solarctf-2026,
+    liga-ctf-r1-2026 (год в имени — чек-лист п.14). Платформы перечислены
+    в PLATFORM_DIRS; остальное — эвристики по префиксу.
+    """
     low = name.lower()
     if low in PLATFORM_DIRS:
         return False
+    if YEAR_RE.match(low):
+        return True
     return (low.startswith(("avito", "kubok", "solar", "liga"))
             or "ctf" in low)
 
 
 def event_title(name: str) -> str:
-    """solarctf-2026 -> «Solar CTF 2026», bootcamp -> «Standoff Bootcamp»."""
+    """solarctf-2026 -> «Solar CTF 2026», standoff-bootcamp-7 ->
+    «Standoff Bootcamp 7», bootcamp -> «Standoff Bootcamp»."""
     m = YEAR_RE.match(name)
-    base, year = (m.group(1), m.group(2)) if m else (name, "")
+    if m:
+        base, year = m.group(1), m.group(2)
+    else:
+        m = SEASON_RE.match(name)
+        base = m.group(1) if m else name
+        year = m.group(2) if m else ""
     title = EVENT_TITLES.get(base.lower())
     if title is None:
         title = " ".join("CTF" if w.lower() == "ctf" else w.capitalize()
