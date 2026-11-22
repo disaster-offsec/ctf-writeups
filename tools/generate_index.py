@@ -122,6 +122,24 @@ def readme_title(folder: Path) -> str:
     return folder.name
 
 
+def _norm_title(s: str) -> str:
+    return re.sub(r"[^a-zа-я0-9]+", " ", s.lower()).strip()
+
+
+def task_title(d: Path) -> str:
+    """Заголовок таска для индекса.
+
+    Обычно H1 из README, но если H1 совпадает с названием события или
+    платформы (так бывает, когда корневой README события перенесён в
+    папку таска целиком — как flare-on-2014/C1) — показываем имя папки,
+    иначе в таблице будут две одинаковые ссылки."""
+    title = readme_title(d)
+    top = d.relative_to(ROOT).parts[0]
+    if _norm_title(title) in {_norm_title(event_title(top)), _norm_title(top)}:
+        return d.name
+    return title
+
+
 def top_dirs() -> list[Path]:
     return sorted(
         d for d in ROOT.iterdir()
@@ -132,9 +150,10 @@ def top_dirs() -> list[Path]:
 def walk_tasks(parent: Path, depth: int = WALK_DEPTH) -> list[Path]:
     """Все таски вглубь до depth уровней — ВКЛЮЧАЯ папки без README.
 
-    Таск = папка с README.md, ИЛИ листовая папка с файлами, но без README
-    (решается, райтап не написан). Папки-категории (внутри есть таски)
-    тасками не считаются."""
+    Таск = папка с README.md, ИЛИ папка без README, у которой прямо внутри
+    лежат файлы (решается, райтап не написан; вложенные подпапки — это
+    ассеты типа img/, files/ и отдельно не разворачиваются). Папка без
+    README и без своих файлов — категория-контейнер: идём внутрь."""
     found = []
     for d in sorted(parent.iterdir()):
         if not d.is_dir() or d.name.startswith("."):
@@ -142,11 +161,11 @@ def walk_tasks(parent: Path, depth: int = WALK_DEPTH) -> list[Path]:
         if (d / "README.md").exists():
             found.append(d)
             continue
+        if any(p.is_file() for p in d.iterdir()):
+            found.append(d)  # файлы прямо здесь — таск, а не категория
+            continue
         inner = walk_tasks(d, depth - 1) if depth > 1 else []
-        if inner:
-            found.extend(inner)
-        elif any(p.is_file() for p in d.iterdir()):
-            found.append(d)  # файлы есть, README нет — на дорешке
+        found.extend(inner)
     return found
 
 
@@ -409,7 +428,7 @@ def task_table(tasks: list[Path], base: Path) -> str:
     for t in tasks:
         local = t.relative_to(base).as_posix() + "/"
         rows.append([
-            md_link(readme_title(t), local),
+            md_link(task_title(t), local),
             task_status(t),
             last_commit(t),
         ])
@@ -526,7 +545,7 @@ def update_class_readme(cls: Path, labs: list[Path]) -> None:
     for lab in labs:
         local = lab.relative_to(cls).as_posix()
         rows.append([
-            md_link(readme_title(lab), local + "/"),
+            md_link(task_title(lab), local + "/"),
             task_status(lab),
             last_commit(lab),
         ])

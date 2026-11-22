@@ -140,6 +140,7 @@
    ├── debian-binary
    ├── mc-backup-tool_1.3.7-ubuntu22_amd64.deb
    └── Packages
+   ```
 
 4. Ищем следы руткита:
    В `ctl/postinst` видим копирование `libmcbackup.so` в `/usr/lib/mc-backup-tool/stealth/`:
@@ -362,4 +363,3 @@ TODO: продолжить этот райтап с этого момента
 - [LD_PRELOAD Rootkits: How they work](https://www.nexpose.com/blog/ld-preload-rootkits)
 - [APT Repository Security](https://wiki.debian.org/SecureApt)
 - [MITRE ATT&CK: Supply Chain Compromise (T1195)](https://attack.mitre.org/techniques/T1195/)
-```

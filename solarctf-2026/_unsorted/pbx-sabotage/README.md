@@ -201,7 +201,7 @@ tshark -r pbx_capture.pcapng -q -z follow,tcp,raw,10                           #
 
 Каждая часть начинается с собственного заголовка:
 
-```
+```text
 "SOLPBKCH" | idx(1) | total(1)=3 | len(LE32) | crc32(LE32)   = 18 байт
 ```
 

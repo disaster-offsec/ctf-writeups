@@ -10,9 +10,13 @@
   D. Безликое имя папки:           lab1, task-2, writeup_3 ...
   E. Заглушка: в README есть маркер черновика (draft / черновик / TODO / TBD)
   F. Код-блок без языка подсветки: открывающая ограда ``` без ```python/bash/...
+  G. Сломанная структура код-блоков: закрывающая ``` приклеена к тексту,
+     ограда ```lang внутри открытого блока (пропущено закрытие), блок
+     не закрыт до конца файла
 
-Печатает готовый todo-лист. Порядок чинить: C/D (сразу видно в индексе на
-главной) -> A/B -> E (заглушки, план "по одному в день").
+Печатает готовый todo-лист. Порядок чинить: G (ломает рендер на GitHub и
+всю статистику F) -> C/D (сразу видно в индексе на главной) -> A/B ->
+E (заглушки, план "по одному в день").
 """
 from __future__ import annotations
 
@@ -32,6 +36,12 @@ GENERIC_TITLE = re.compile(
     r"^(?:lab|task|задача|writeup|райтап)[\s_\-]*(?:\d+)?$", re.I)
 GENERIC_DIR = re.compile(r"^(?:lab|task|writeup)[\-_]?\d+$", re.I)
 DRAFT_MARK = re.compile(r"\b(?:draft|черновик|черновая|в работе|todo|tbd)\b", re.I)
+
+# Ограда ```: до 7 пробелов отступа (в т.ч. внутри пункта списка),
+# опциональный маркер списка перед ней, 3+ бектика, опциональный язык
+# (между бектиками и языком допускаются пробелы/табы).
+FENCE_RE = re.compile(
+    r"^(\s{0,7})(?:([-*+]|\d{1,9}[.)])\s+)?(`{3,})[ \t]*(\S.*)?$")
 
 
 def strip_index(text: str) -> str:
@@ -58,28 +68,50 @@ def readme_heading(folder: Path) -> str:
     return ""
 
 
-def unlanged_blocks(folder: Path) -> list[int]:
-    """Номера строк открытых оград ``` без языка подсветки.
+def scan_fences(text: str) -> tuple[list[int], list[str]]:
+    """Сканирование оград ``` по правилам, близким к CommonMark.
 
-    Закрывающие ограды пусты по определению: считаем только те,
-    которые открывают блок (чётное чередование).
+    Блок закрывает ТОЛЬКО голая ограда (без языка) не короче открывавшей
+    на отдельной строке. Ограда ```lang внутри открытого блока — это
+    контент, а не закрытие: почти всегда означает пропущенную ``` выше.
+
+    Возвращает (номера открывашек без языка, структурные проблемы).
     """
+    unlanged: list[int] = []
+    issues: list[str] = []
+    inb, olen, oline = False, 3, 0
+    for i, line in enumerate(text.splitlines(), 1):
+        m = FENCE_RE.match(line)
+        if m:
+            marker, ticks, info = m.group(2), m.group(3), (m.group(4) or "").strip()
+            if not inb:
+                if not info:
+                    unlanged.append(i)  # открытие без языка
+                inb, olen, oline = True, len(ticks), i
+            elif not marker and not info and len(ticks) >= olen:
+                inb = False  # нормальное закрытие
+            else:
+                issues.append(
+                    f"строка {i}: ограда ```{info} внутри блока, открытого "
+                    f"на строке {oline}, — выше почти наверняка пропущена "
+                    "закрывающая ```")
+        elif inb and line.rstrip().endswith("```"):
+            issues.append(
+                f"строка {i}: закрывающая ``` приклеена к тексту — "
+                "перенеси её на отдельную строку")
+    if inb:
+        issues.append(
+            f"строка {oline}: код-блок не закрыт до конца файла "
+            "(или это лишняя ограда — просто удали)")
+    return unlanged, issues
+
+
+def fence_problems(folder: Path) -> tuple[list[int], list[str]]:
     try:
         text = strip_index((folder / "README.md").read_text(encoding="utf-8"))
     except Exception:
-        return []
-    out, inb = [], False
-    for i, line in enumerate(text.splitlines(), 1):
-        s = line.strip()
-        if not s.startswith("```"):
-            continue
-        if not inb:
-            if s == "```":
-                out.append(i)  # открытие без языка
-            inb = True
-        else:
-            inb = False
-    return out
+        return [], []
+    return scan_fences(text)
 
 
 def is_draft(folder: Path) -> bool:
@@ -100,11 +132,15 @@ def check_dir(d: Path, problems: dict[str, list[str]]) -> None:
         problems["D. безликое имя папки"].append(rel(d))
     if is_draft(d):
         problems["E. заглушка (черновик)"].append(rel(d))
-    lines = unlanged_blocks(d)
-    if lines:
+    unl, issues = fence_problems(d)
+    if unl:
         problems["F. код-блок без языка"].append(
-            f"{rel(d)} — строки {', '.join(map(str, lines[:8]))}"
-            + ("..." if len(lines) > 8 else ""))
+            f"{rel(d)} — строки {', '.join(map(str, unl[:8]))}"
+            + ("..." if len(unl) > 8 else ""))
+    if issues:
+        problems["G. сломанные код-блоки"].append(
+            f"{rel(d)} — {issues[0]}" + (f" (+{len(issues) - 1} ещё)"
+                                          if len(issues) > 1 else ""))
 
 
 def visit(d: Path, problems: dict[str, list[str]], depth: int = DEPTH) -> None:
