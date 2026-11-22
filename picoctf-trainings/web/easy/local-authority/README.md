@@ -1,22 +1,39 @@
-# local-authority
+<!-- конвертировано из local-authority.typ, tools/typ2readme.py -->
 
 | | |
 |---|---|
-| **Источник** | local-authority.typ / local-authority.pdf (в этой папке) |
-| **Статус** | черновик: перенести текст в README по шаблону templates/writeup-README.md |
+| **Платформа / Событие** | picoCTF Trainings |
+| **Категория** | Web |
+| **Сложность** | Easy 100 pts |
+| **Статус** | done |
+| **Дата решения** | 19 июля 2026 |
+| **Ссылка на таск** | — |
 
-## TL;DR
+# Local Authority
 
-TODO
+## Задание
 
-## Steps
+Can you get the flag?
 
-TODO
+## Решение
 
-## Why it works
+Смотрим DevTools:Sources: secure.js
+```javascript
+function checkPassword(username, password)
+{
+  if( username === 'admin' && password === 'strongPassword098765' )
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+```
 
-TODO
+И получаем: 
 
-## Defense
-
-TODO
+```text
+picoCTF{j5_15_7r4n5p4r3n7_a8788e61}
+```

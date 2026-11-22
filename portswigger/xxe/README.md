@@ -41,8 +41,11 @@
 
 ---
 
+<!-- INDEX:START -->
 ## Labs
 
-| #  | Lab                                                                                     | Last commit |
-|----|-----------------------------------------------------------------------------------------|-------------|
-| 01 | [Lab: Exploiting XXE using external entities to retrieve files](01-xxe-retrieve-files/) | 2026-10-26  |
+| Lab                                                                                     | Status | Last commit |
+|-----------------------------------------------------------------------------------------|--------|-------------|
+| [Lab: Exploiting XXE using external entities to retrieve files](01-xxe-retrieve-files/) | done   | 2026-10-26  |
+
+<!-- INDEX:END -->

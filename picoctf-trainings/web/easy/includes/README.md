@@ -1,22 +1,40 @@
-# includes
+<!-- конвертировано из includes.typ, tools/typ2readme.py -->
 
 | | |
 |---|---|
-| **Источник** | includes.typ / includes.pdf (в этой папке) |
-| **Статус** | черновик: перенести текст в README по шаблону templates/writeup-README.md |
+| **Платформа / Событие** | picoCTF Trainings |
+| **Категория** | Web |
+| **Сложность** | Easy 100 pts |
+| **Статус** | done |
+| **Дата решения** | 19 июля 2026 |
+| **Ссылка на таск** | — |
 
-## TL;DR
+# Includes
 
-TODO
+## Задание
 
-## Steps
+Can you get the flag?
 
-TODO
+## Решение
 
-## Why it works
+Открываем DevTools:Network:Response
 
-TODO
+style.css:
+```css
+body {
+  background-color: lightblue;
+}
 
-## Defense
+/*  picoCTF{1nclu51v17y_1of2_  */
+```
 
-TODO
+script.js
+```javascript
+
+function greetings()
+{
+  alert("This code is in a separate file!");
+}
+
+//  f7w_2of2_df589022}
+```

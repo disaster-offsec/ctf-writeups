@@ -1,18 +1,28 @@
 #!/usr/bin/env python3
-"""Генератор индексных таблиц для ctf-writeups.
+"""Генератор дашборда и индексов для ctf-writeups.
 
 Запуск из корня репозитория:  python3 tools/generate_index.py
 
 Что делает:
-  1. Корневой README.md: заполняет секцию между маркерами
-     <!-- INDEX:START --> ... <!-- INDEX:END -->
-     (если маркеров нет — добавляет секцию в конец файла).
-     Все названия в таблицах — кликабельные ссылки на папку райтапа.
-  2. Для каждой папки класса PortSwigger добавляет/обновляет секцию "## Labs"
-     с таблицей лаб внутри классового README.md. Если README нет — создаёт
-     заготовку конспекта класса.
-  3. Чинит ссылки во всех README репозитория: GitHub blob/tree-URL и корневые
-     абсолютные пути переписывает в относительные (как папки лежат на диске).
+  1. Корневой README.md — дашборд: одна строка на каждую папку первого
+     уровня (ссылка, решено/всего, черновики, последний коммит). Больше
+     в корне никаких таблиц категорий — вся детализация в README самих
+     папок. Секция между <!-- INDEX:START --> и <!-- INDEX:END -->.
+  2. Каждая папка первого уровня (portswigger, solarctf-2026, bootcamp,
+     hackthebox, others...) получает свой README.md: строка прогресса
+     (Solved: n/total) + разбивка по категориям и таскам со статусом
+     каждого райтапа. Нет README — создаст заготовку.
+  3. Классы PortSwigger: таблица лаб в классовом README (со статусами),
+     заготовка конспекта класса, если README ещё нет.
+  4. Чинит ссылки во всех README: GitHub blob/tree-URL и корневые
+     абсолютные пути переписывает в относительные (как папки лежат
+     на диске). Ссылки на чужие репо и внешние сайты не трогает.
+
+Статусы райтапа:
+  done    — README заполнен, маркеров черновика нет;
+  draft   — в README есть маркер: draft / черновик / в работе / TODO / TBD
+            (райтап из шаблона создаётся со строкой «Статус | draft»);
+  —       — папка есть (скрипты, файлы), README ещё нет — на дорешке.
 
 Райтап = папка, внутри которой лежит README.md.
 Только стандартная библиотека, git используется для дат коммитов (опционально).
@@ -31,6 +41,60 @@ ROOT = Path(__file__).resolve().parent.parent
 EXCLUDE_TOP = {"tools", "templates", ".git", ".github"}
 PORTSWIGGER = "portswigger"
 
+# Папки-платформы (не CTF-события): попадают в "Platforms & trainings".
+PLATFORM_DIRS = {
+    PORTSWIGGER, "hackthebox", "picoctf", "picoctf-trainings",
+    "bootcamp", "flare-on", "tryhackme", "vulnlab", "others",
+}
+
+# Названия для заголовков README (ключ — имя папки без года). Если папка
+# называется нестандартно — просто добавь сюда строку; иначе заголовок
+# соберётся автоматически из имени папки.
+EVENT_TITLES = {
+    "portswigger": "PortSwigger Web Security Academy",
+    "picoctf": "picoCTF",
+    "picoctf-trainings": "picoCTF Trainings",
+    "solarctf": "Solar CTF",
+    "solar": "Solar CTF",
+    "ligactf": "Лига CTF",
+    "liga-ctf": "Лига CTF",
+    "liga-ctf-r1": "Лига CTF (раунд 1)",
+    "avitoctf": "AvitoCTF",
+    "kubok-ctf": "Кубок CTF",
+    "bootcamp": "Standoff Bootcamp",
+    "flare-on": "Flare-On",
+    "hackthebox": "Hack The Box",
+    "others": "Разные задачи",
+}
+
+YEAR_RE = re.compile(r"^(.*?)-(\d{4})$")
+DRAFT_MARK = re.compile(r"\b(?:draft|черновик|черновая|в работе|todo|tbd)\b", re.I)
+WALK_DEPTH = 3  # райтапы ищем вглубь до 3 уровней (категория/уровень/таск)
+
+STATUS_DONE = "done"
+STATUS_DRAFT = "draft"
+STATUS_MISSING = "—"
+
+
+def is_event(name: str) -> bool:
+    """CTF-событие vs платформа: solarctf-2026, liga-ctf-r1-2026, kubok..."""
+    low = name.lower()
+    if low in PLATFORM_DIRS:
+        return False
+    return (low.startswith(("avito", "kubok", "solar", "liga"))
+            or "ctf" in low)
+
+
+def event_title(name: str) -> str:
+    """solarctf-2026 -> «Solar CTF 2026», bootcamp -> «Standoff Bootcamp»."""
+    m = YEAR_RE.match(name)
+    base, year = (m.group(1), m.group(2)) if m else (name, "")
+    title = EVENT_TITLES.get(base.lower())
+    if title is None:
+        title = " ".join("CTF" if w.lower() == "ctf" else w.capitalize()
+                         for w in base.split("-"))
+    return f"{title} {year}".strip()
+
 MARK_START = "<!-- INDEX:START -->"
 MARK_END = "<!-- INDEX:END -->"
 
@@ -47,6 +111,7 @@ def last_commit(path: Path) -> str:
 
 
 def readme_title(folder: Path) -> str:
+    """Заголовок из README райтапа; без README — имя папки."""
     try:
         for line in (folder / "README.md").read_text(encoding="utf-8").splitlines():
             s = line.strip()
@@ -57,10 +122,6 @@ def readme_title(folder: Path) -> str:
     return folder.name
 
 
-def count_files(folder: Path) -> int:
-    return sum(1 for p in folder.rglob("*") if p.is_file())
-
-
 def top_dirs() -> list[Path]:
     return sorted(
         d for d in ROOT.iterdir()
@@ -68,19 +129,77 @@ def top_dirs() -> list[Path]:
     )
 
 
-def sub_writeups(parent: Path, depth: int = 3) -> list[Path]:
-    """Райтапы вглубь до 3 уровней:
-    parent/lab, parent/category/lab, parent/category/level/lab."""
+def walk_tasks(parent: Path, depth: int = WALK_DEPTH) -> list[Path]:
+    """Все таски вглубь до depth уровней — ВКЛЮЧАЯ папки без README.
+
+    Таск = папка с README.md, ИЛИ листовая папка с файлами, но без README
+    (решается, райтап не написан). Папки-категории (внутри есть таски)
+    тасками не считаются."""
     found = []
     for d in sorted(parent.iterdir()):
         if not d.is_dir() or d.name.startswith("."):
             continue
         if (d / "README.md").exists():
             found.append(d)
-        elif depth > 1:
-            found.extend(sub_writeups(d, depth - 1))
+            continue
+        inner = walk_tasks(d, depth - 1) if depth > 1 else []
+        if inner:
+            found.extend(inner)
+        elif any(p.is_file() for p in d.iterdir()):
+            found.append(d)  # файлы есть, README нет — на дорешке
     return found
 
+
+def tasks_of(d: Path) -> list[Path]:
+    """Таски папки верхнего уровня; portswigger — лабы всех классов."""
+    if d.name == PORTSWIGGER:
+        out = []
+        for cls in pw_classes():
+            out.extend(walk_tasks(cls))
+        return out
+    return walk_tasks(d)
+
+
+# --- статусы и прогресс ---
+
+def task_status(d: Path) -> str:
+    """done / draft (маркер черновика в README) / — (README нет)."""
+    rp = d / "README.md"
+    if not rp.exists():
+        return STATUS_MISSING
+    try:
+        text = rp.read_text(encoding="utf-8")
+    except Exception:
+        return STATUS_MISSING
+    return STATUS_DRAFT if DRAFT_MARK.search(text) else STATUS_DONE
+
+
+def stats(tasks: list[Path]) -> tuple[int, int, int]:
+    """(готово, черновиков, без райтапа)."""
+    st = [task_status(t) for t in tasks]
+    return (st.count(STATUS_DONE), st.count(STATUS_DRAFT),
+            st.count(STATUS_MISSING))
+
+
+def stats_line(tasks: list[Path]) -> str:
+    done, draft, missing = stats(tasks)
+    if not tasks:
+        return "Nothing here yet."
+    line = f"Solved: {done}/{len(tasks)}"
+    extra = []
+    if draft:
+        extra.append(f"drafts: {draft}")
+    if missing:
+        extra.append(f"no writeup: {missing}")
+    return line + (" · " + " · ".join(extra) if extra else "")
+
+
+def done_total(tasks: list[Path]) -> str:
+    done, _, _ = stats(tasks)
+    return f"{done}/{len(tasks)}"
+
+
+# --- markdown-хелперы ---
 
 def rel(p: Path) -> str:
     return p.relative_to(ROOT).as_posix()
@@ -92,7 +211,7 @@ def md_url(path: str) -> str:
 
 
 def md_link(text: str, path: str) -> str:
-    """Кликабельная ячейка таблицы: [текст](папка/)."""
+    """Кликабельная ячейка таблицы: [текст](путь)."""
     text = (text.replace("\\", "\\\\")
                 .replace("[", "\\[")
                 .replace("]", "\\]")
@@ -100,8 +219,13 @@ def md_link(text: str, path: str) -> str:
     return f"[{text}]({md_url(path)})"
 
 
-def section_header(name: str) -> str:
-    return f"### [{name}]({md_url(name)}/)"
+def table(rows: list[list[str]]) -> str:
+    if len(rows) <= 1:  # нет ни одной строки данных
+        return "_Пока пусто._\n"
+    widths = [max(len(r[i]) for r in rows) for i in range(len(rows[0]))]
+    def fmt(r): return "| " + " | ".join(c.ljust(w) for c, w in zip(r, widths)) + " |"
+    sep = "|" + "|".join("-" * (w + 2) for w in widths) + "|"
+    return "\n".join([fmt(rows[0]), sep] + [fmt(r) for r in rows[1:]]) + "\n"
 
 
 # --- починка ссылок: blob/tree-URL и корневые пути -> относительные ---
@@ -193,66 +317,50 @@ def normalize_all_readmes() -> int:
     return total
 
 
-def table(rows: list[list[str]]) -> str:
-    if len(rows) <= 1:  # нет ни одной строки данных
-        return "_Пока пусто._\n"
-    widths = [max(len(r[i]) for r in rows) for i in range(len(rows[0]))]
-    def fmt(r): return "| " + " | ".join(c.ljust(w) for c, w in zip(r, widths)) + " |"
-    sep = "|" + "|".join("-" * (w + 2) for w in widths) + "|"
-    return "\n".join([fmt(rows[0]), sep] + [fmt(r) for r in rows[1:]]) + "\n"
+# --- корневой README: дашборд, одна строка на папку ---
+
+def dashboard_row(d: Path, tasks: list[Path]) -> list[str]:
+    done, draft, _ = stats(tasks)
+    return [
+        md_link(d.name, d.name + "/"),
+        f"{done}/{len(tasks)}",
+        str(draft) if draft else "—",
+        last_commit(d),
+    ]
 
 
-def section_for(top: Path) -> str:
-    """Готовит markdown-секцию для одной папки верхнего уровня."""
-    name = top.name
-    classes = [d for d in top.iterdir() if d.is_dir() and not d.name.startswith(".")]
-    if name == PORTSWIGGER:
-        rows = [["Class", "Labs", "Last commit"]]
-        for c in sorted(classes):
-            labs = sub_writeups(c)
-            rows.append([
-                md_link(c.name, rel(c) + "/"),
-                str(len(labs)) if labs else "-",
-                last_commit(labs[-1]) if labs else "-",
-            ])
-        return section_header(name) + "\n\n" + table(rows)
-
-    subs = sub_writeups(top)
-    # README в папке-контейнере (описание раздела) не делает папку райтапом:
-    # если внутри есть вложенные райтапы — перечисляем их построчно
-    single = (top / "README.md").exists() and not subs
-    if single:
-        rows = [["Writeup", "Files", "Last commit"]]
-        rows.append([md_link(readme_title(top), rel(top) + "/"),
-                     str(count_files(top)), last_commit(top)])
-        return section_header(name) + "\n\n" + table(rows)
-
-    rows = [["Writeup", "Files", "Last commit"]]
-    for w in subs:
-        rows.append([md_link(readme_title(w), rel(w) + "/"),
-                     str(count_files(w)), last_commit(w)])
-    return section_header(name) + "\n\n" + table(rows)
+def dashboard(items: list[tuple[Path, list[Path]]]) -> str:
+    """Строка прогресса секции + таблица «одна строка на папку»."""
+    rows = [["Folder", "Done", "Draft", "Last commit"]]
+    all_tasks: list[Path] = []
+    for d, t in items:
+        rows.append(dashboard_row(d, t))
+        all_tasks.extend(t)
+    return (stats_line(all_tasks) + "\n\n" + table(rows)).rstrip()
 
 
 def build_index() -> str:
-    known_events, known_other = [], []
+    events, platforms = [], []
     for d in top_dirs():
         if d.name == PORTSWIGGER:
             continue
-        if d.name.lower().startswith(("avito", "kubok", "solar")):
-            known_events.append(d)
-        else:
-            known_other.append(d)
+        (events if is_event(d.name) else platforms).append(d)
 
     parts = []
     pw = ROOT / PORTSWIGGER
     if pw.exists():
-        parts.append("## PortSwigger Academy\n\n" + section_for(pw))
-    if known_events:
-        parts.append("## CTF events\n\n" + "\n".join(section_for(d) for d in known_events))
-    if known_other:
-        parts.append("## Platforms & trainings\n\n" + "\n".join(section_for(d) for d in known_other))
-    return "\n".join(parts)
+        pw_tasks = tasks_of(pw)
+        if pw_tasks:
+            parts.append("## PortSwigger Academy\n\n" + dashboard([(pw, pw_tasks)]))
+    ev = [(d, tasks_of(d)) for d in events]
+    ev = [(d, t) for d, t in ev if t]
+    if ev:
+        parts.append("## CTF events\n\n" + dashboard(ev))
+    pl = [(d, tasks_of(d)) for d in platforms]
+    pl = [(d, t) for d, t in pl if t]
+    if pl:
+        parts.append("## Platforms & trainings\n\n" + dashboard(pl))
+    return "\n\n".join(p.rstrip() for p in parts)
 
 
 def update_root_readme() -> bool:
@@ -272,6 +380,111 @@ def update_root_readme() -> bool:
         text = text.rstrip() + "\n\n---\n\n" + index_block + "\n"
     readme.write_text(text, encoding="utf-8")
     return True
+
+
+# --- README каждой папки первого уровня ---
+
+def create_folder_readme(folder: Path) -> None:
+    """Заготовка README папки; индекс внутри заполнит update_folder_readme."""
+    if folder.name == PORTSWIGGER:
+        intro = ("Конспекты классов: теория, типовые атаки и защита. Лабы — "
+                 "отдельные папки с райтапами (TL;DR → Steps → Why it works → "
+                 "Defense). Индекс ниже ведётся скриптом `tools/generate_index.py`"
+                 " — между маркерами руками не править.")
+    else:
+        intro = ("Райтапы: TL;DR → Steps → Why it works → Defense. Индекс ниже "
+                 "ведётся скриптом `tools/generate_index.py` — между маркерами "
+                 "руками не править.")
+    text = (
+        f"# {event_title(folder.name)}\n\n"
+        f"{intro}\n\n"
+        f"{MARK_START}\n{MARK_END}\n"
+    )
+    (folder / "README.md").write_text(text, encoding="utf-8")
+
+
+def task_table(tasks: list[Path], base: Path) -> str:
+    """Таблица тасков: Task | Status | Last commit; пути от base (папки README)."""
+    rows = [["Task", "Status", "Last commit"]]
+    for t in tasks:
+        local = t.relative_to(base).as_posix() + "/"
+        rows.append([
+            md_link(readme_title(t), local),
+            task_status(t),
+            last_commit(t),
+        ])
+    return table(rows)
+
+
+def outline(parent: Path, base: Path, depth: int = WALK_DEPTH) -> str:
+    """Разбивка папки на категории: заголовок «### [cat](cat/) — n/total»
+    (плюс черновики/дорешка, если есть) и таблица тасков. Вложенные
+    категории — рекурсией, пути считаются от base (папки README)."""
+    tasks = walk_tasks(parent, depth)
+    parts = []
+    direct = [t for t in tasks if t.parent == parent]
+    if direct:
+        parts.append(task_table(direct, base))
+    groups: dict[str, list[Path]] = {}
+    for t in tasks:
+        rp = t.relative_to(parent).parts
+        if len(rp) > 1:
+            groups.setdefault(rp[0], []).append(t)
+    for gname, gtasks in sorted(groups.items()):
+        gdir = parent / gname
+        _, draft, missing = stats(gtasks)
+        head = f"### {md_link(gname, md_url(gdir.relative_to(base).as_posix()) + '/')} — {done_total(gtasks)}"
+        if draft:
+            head += f" · {draft} draft"
+        if missing:
+            head += f" · {missing} no writeup"
+        parts.append(head + "\n\n" + outline(gdir, base, depth - 1))
+    return "\n\n".join(p.rstrip() for p in parts)
+
+
+def folder_index_block(folder: Path) -> str:
+    tasks = walk_tasks(folder)
+    if not tasks:
+        return "Nothing here yet."
+    return (stats_line(tasks) + "\n\n" + outline(folder, folder)).rstrip()
+
+
+def update_folder_readme(folder: Path, block: str) -> None:
+    rp = folder / "README.md"
+    text = rp.read_text(encoding="utf-8")
+    if MARK_START in text and MARK_END in text:
+        pre = text.split(MARK_START)[0]
+        post = text.split(MARK_END)[1]
+        text = pre + f"{MARK_START}\n{block}\n{MARK_END}" + post
+    else:
+        # ручной README без маркеров: дописываем блок С маркерами,
+        # чтобы следующие прогоны обновляли его на месте
+        text = (text.rstrip() + "\n\n---\n\n"
+                + f"{MARK_START}\n{block}\n{MARK_END}" + "\n")
+    rp.write_text(text, encoding="utf-8")
+
+
+# --- классы PortSwigger ---
+
+def pw_classes() -> list[Path]:
+    pw = ROOT / PORTSWIGGER
+    if not pw.exists():
+        return []
+    return sorted(d for d in pw.iterdir()
+                  if d.is_dir() and not d.name.startswith("."))
+
+
+def pw_index_block() -> str:
+    """Индекс для portswigger/README.md: прогресс + таблица классов."""
+    tasks = tasks_of(ROOT / PORTSWIGGER)
+    if not tasks:
+        return "Nothing here yet."
+    rows = [["Class", "Done", "Draft", "Last commit"]]
+    for cls in pw_classes():
+        t = walk_tasks(cls)
+        if t:
+            rows.append(dashboard_row(cls, t))
+    return (stats_line(tasks) + "\n\n" + table(rows)).rstrip()
 
 
 CLASS_TITLES = {
@@ -309,20 +522,22 @@ def create_class_readme(cls: Path) -> None:
 def update_class_readme(cls: Path, labs: list[Path]) -> None:
     # Ссылки относительно папки класса: README лежит в portswigger/<класс>/,
     # поэтому путь к лабе — просто <NN-slug>/ (как в папке и лежит).
-    rows = [["#", "Lab", "Last commit"]]
+    rows = [["Lab", "Status", "Last commit"]]
     for lab in labs:
-        m = re.match(r"\d+", lab.name)
-        num = m.group(0) if m else "-"
         local = lab.relative_to(cls).as_posix()
-        rows.append([num, md_link(readme_title(lab), local + "/"), last_commit(lab)])
-    block = "## Labs\n\n" + table(rows)
+        rows.append([
+            md_link(readme_title(lab), local + "/"),
+            task_status(lab),
+            last_commit(lab),
+        ])
+    block = f"{MARK_START}\n## Labs\n\n{table(rows)}\n{MARK_END}"
 
     readme = cls / "README.md"
     text = readme.read_text(encoding="utf-8") if readme.exists() else ""
     if MARK_START in text and MARK_END in text:
         pre = text.split(MARK_START)[0]
         post = text.split(MARK_END)[1]
-        text = pre + f"{MARK_START}\n{block}\n{MARK_END}" + post
+        text = pre + block + post
     elif "\n## Labs\n" in text or text.startswith("## Labs\n"):
         # заменяем существующую секцию Labs (до следующего "## " или конца файла)
         lines = text.splitlines()
@@ -342,19 +557,57 @@ def update_class_readme(cls: Path, labs: list[Path]) -> None:
     readme.write_text(text, encoding="utf-8")
 
 
+# --- отчёт в консоль ---
+
+def print_coverage() -> None:
+    """Прогресс по папкам первого уровня — объём и статусы, для планирования."""
+    print("\nПрогресс:")
+    printed = False
+    for d in top_dirs():
+        tasks = tasks_of(d)
+        if not tasks:
+            continue
+        done, draft, missing = stats(tasks)
+        line = f"  {d.name}: {done}/{len(tasks)} done"
+        if draft:
+            line += f", draft: {draft}"
+        if missing:
+            line += f", без райтапа: {missing}"
+        if d.name == PORTSWIGGER:
+            per = []
+            for cls in pw_classes():
+                t = walk_tasks(cls)
+                if t:
+                    per.append(f"{cls.name}: {done_total(t)}")
+            if per:
+                line += " (" + ", ".join(per) + ")"
+        else:
+            groups: dict[str, list[Path]] = {}
+            for t in tasks:
+                rp = t.relative_to(d).parts
+                if len(rp) > 1:
+                    groups.setdefault(rp[0], []).append(t)
+            if groups:
+                per = ", ".join(f"{g}: {done_total(gt)}"
+                                for g, gt in sorted(groups.items()))
+                line += " (" + per + ")"
+        print(line)
+        printed = True
+    if not printed:
+        print("  пока пусто")
+
+
 def main() -> int:
     if not (ROOT / ".git").exists():
         print("Запусти скрипт из корня репозитория (не найден .git).")
         return 1
     ok = update_root_readme()
-    pw = ROOT / PORTSWIGGER
+
     n_updated = n_created = 0
     created: list[str] = []
-    if pw.exists():
-        for cls in sorted(pw.iterdir()):
-            if not cls.is_dir() or cls.name.startswith("."):
-                continue
-            labs = sub_writeups(cls)
+    if (ROOT / PORTSWIGGER).exists():
+        for cls in pw_classes():
+            labs = walk_tasks(cls)
             if not labs:
                 continue
             if not (cls / "README.md").exists():
@@ -363,11 +616,29 @@ def main() -> int:
                 created.append(cls.name)
             update_class_readme(cls, labs)
             n_updated += 1
+
+    ev_updated = ev_new = 0
+    folders_created: list[str] = []
+    for d in top_dirs():
+        if not tasks_of(d):
+            continue  # пустая папка или одиночный райтап — индекс не нужен
+        if not (d / "README.md").exists():
+            create_folder_readme(d)
+            ev_new += 1
+            folders_created.append(d.name)
+        block = (pw_index_block() if d.name == PORTSWIGGER
+                 else folder_index_block(d))
+        update_folder_readme(d, block)
+        ev_updated += 1
+
     n_fixed = normalize_all_readmes()
-    print(f"Корневой README: {'обновлён' if ok else 'ошибка'}")
+    print(f"Корневой README (дашборд): {'обновлён' if ok else 'ошибка'}")
     print(f"Классовых README обновлено: {n_updated}, создано: {n_created}"
           + (f" ({', '.join(created)})" if created else ""))
+    print(f"README папок: обновлено {ev_updated}, создано: {ev_new}"
+          + (f" ({', '.join(folders_created)})" if folders_created else ""))
     print(f"Ссылок переведено на относительные пути: {n_fixed}")
+    print_coverage()
     return 0
 
 

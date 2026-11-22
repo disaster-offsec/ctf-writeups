@@ -59,13 +59,16 @@ email=wiener@normal-user.com
 
 ---
 
+<!-- INDEX:START -->
 ## Labs
 
-| #  | Lab                                                                                              | Last commit |
-|----|--------------------------------------------------------------------------------------------------|-------------|
-| 01 | [Lab: CSRF vulnerability with no defenses](01-csrf-basic/)                                       | 2026-10-26  |
-| 02 | [Lab: CSRF where token validation depends on request method](02-csrf-token-validation/)          | 2026-11-18  |
-| 03 | [Lab: CSRF where token validation depends on token being present](03-csrf-token-validation/)     | 2026-11-18  |
-| 04 | [Lab: CSRF where token is not tied to user session](04-csrf-user-session/)                       | 2026-11-18  |
-| 05 | [Lab: CSRF where token is tied to non-session cookie](05-csrf-token-tied-to-non-session-cookie/) | 2026-11-18  |
-| 06 | [Lab: CSRF where token is duplicated in cookie](06-csrf-token-duplicated/)                       | 2026-11-18  |
+| Lab                                                                                              | Status | Last commit |
+|--------------------------------------------------------------------------------------------------|--------|-------------|
+| [Lab: CSRF vulnerability with no defenses](01-csrf-basic/)                                       | done   | 2026-10-26  |
+| [Lab: CSRF where token validation depends on request method](02-csrf-token-validation/)          | done   | 2026-11-18  |
+| [Lab: CSRF where token validation depends on token being present](03-csrf-token-validation/)     | done   | 2026-11-18  |
+| [Lab: CSRF where token is not tied to user session](04-csrf-user-session/)                       | done   | 2026-11-18  |
+| [Lab: CSRF where token is tied to non-session cookie](05-csrf-token-tied-to-non-session-cookie/) | done   | 2026-11-18  |
+| [Lab: CSRF where token is duplicated in cookie](06-csrf-token-duplicated/)                       | done   | 2026-11-18  |
+
+<!-- INDEX:END -->

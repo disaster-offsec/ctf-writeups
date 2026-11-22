@@ -5,8 +5,8 @@
 <!-- INDEX:START -->
 ## Labs
 
-| #  | Lab                                                         | Last commit |
-|----|-------------------------------------------------------------|-------------|
-| 01 | [Lab: File path traversal, simple case](01-path-traversal/) | 2026-10-26  |
+| Lab                                                         | Status | Last commit |
+|-------------------------------------------------------------|--------|-------------|
+| [Lab: File path traversal, simple case](01-path-traversal/) | done   | 2026-10-26  |
 
 <!-- INDEX:END -->
