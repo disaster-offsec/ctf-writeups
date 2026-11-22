@@ -1,5 +1,14 @@
 # Reflected XSS into HTML context with most tags and attributes blocked
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | xss |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `PRACTITIONER`
 
 ## Description

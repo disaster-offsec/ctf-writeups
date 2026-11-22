@@ -50,7 +50,7 @@ Solved: 31/31
 
 | Folder                      | Done  | Draft | Last commit |
 |-----------------------------|-------|-------|-------------|
-| [portswigger](portswigger/) | 31/31 | —     | 2026-11-19  |
+| [portswigger](portswigger/) | 31/31 | —     | 2026-11-22  |
 
 ## CTF events
 
@@ -58,20 +58,20 @@ Solved: 22/28 · drafts: 6
 
 | Folder                                | Done  | Draft | Last commit |
 |---------------------------------------|-------|-------|-------------|
-| [avitoctf-2026](avitoctf-2026/)       | 2/2   | —     | 2026-11-18  |
-| [kubok-ctf-2026](kubok-ctf-2026/)     | 5/9   | 4     | 2026-11-18  |
-| [liga-ctf-r1-2026](liga-ctf-r1-2026/) | 0/1   | 1     | 2026-11-21  |
-| [solarctf-2026](solarctf-2026/)       | 15/16 | 1     | 2026-11-18  |
+| [avitoctf-2026](avitoctf-2026/)       | 2/2   | —     | 2026-11-22  |
+| [kubok-ctf-2026](kubok-ctf-2026/)     | 5/9   | 4     | 2026-11-22  |
+| [liga-ctf-r1-2026](liga-ctf-r1-2026/) | 0/1   | 1     | 2026-11-22  |
+| [solarctf-2026](solarctf-2026/)       | 15/16 | 1     | 2026-11-22  |
 
 ## Platforms & trainings
 
-Solved: 40/40
+Solved: 39/45 · no writeup: 6
 
-| Folder                                  | Done  | Draft | Last commit |
-|-----------------------------------------|-------|-------|-------------|
-| [bootcamp](bootcamp/)                   | 10/10 | —     | 2026-11-18  |
-| [flare-on](flare-on/)                   | 1/1   | —     | 2026-11-18  |
-| [hackthebox](hackthebox/)               | 6/6   | —     | 2026-11-20  |
-| [others](others/)                       | 1/1   | —     | 2026-11-18  |
-| [picoctf-trainings](picoctf-trainings/) | 22/22 | —     | 2026-11-18  |
+| Folder                                      | Done  | Draft | Last commit |
+|---------------------------------------------|-------|-------|-------------|
+| [flare-on-2014](flare-on-2014/)             | 0/6   | —     | 2026-11-22  |
+| [hackthebox](hackthebox/)                   | 6/6   | —     | 2026-11-22  |
+| [others](others/)                           | 1/1   | —     | 2026-11-22  |
+| [picoctf-trainings](picoctf-trainings/)     | 22/22 | —     | 2026-11-22  |
+| [standoff-bootcamp-7](standoff-bootcamp-7/) | 10/10 | —     | 2026-11-22  |
 <!-- INDEX:END -->

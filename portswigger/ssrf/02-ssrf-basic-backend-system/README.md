@@ -1,5 +1,14 @@
 # Lab: Basic SSRF against another back-end system
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | ssrf |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 ## Description
 
 Level: `APPRENTICE`

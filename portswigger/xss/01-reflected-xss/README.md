@@ -1,4 +1,14 @@
 # Lab: Reflected XSS into HTML context with nothing encoded
+
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | xss |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 level: apprentice
 
 ## Description

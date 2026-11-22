@@ -7,6 +7,6 @@ Solved: 2/2
 
 | Task                                  | Status | Last commit |
 |---------------------------------------|--------|-------------|
-| [Сопромёд: метро](sopromyod-metro/)   | done   | 2026-11-18  |
-| [Сопромёд: ответы](sopromyod-otvety/) | done   | -           |
+| [Сопромёд: метро](sopromyod-metro/)   | done   | 2026-11-22  |
+| [Сопромёд: ответы](sopromyod-otvety/) | done   | 2026-11-22  |
 <!-- INDEX:END -->

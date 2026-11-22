@@ -1,5 +1,14 @@
 # Lab: SQL injection vulnerability allowing login bypass
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | sqli |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 ## Task
 
 This lab contains a SQL injection vulnerability in the login function.

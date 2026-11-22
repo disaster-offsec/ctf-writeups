@@ -74,3 +74,22 @@ private void btnDecode_Click(object sender, EventArgs e)
 
 Затем при помощи break-points получаю исходную почту:`"3rmahg3rd.b0b.d0ge@flare-on.com\0"`
 
+---
+
+<!-- INDEX:START -->
+Solved: 0/6 · no writeup: 6
+
+| Task      | Status | Last commit |
+|-----------|--------|-------------|
+| [C3](C3/) | —      | 2026-11-22  |
+| [C4](C4/) | —      | 2026-11-22  |
+| [C5](C5/) | —      | 2026-11-22  |
+| [C6](C6/) | —      | 2026-11-22  |
+| [C7](C7/) | —      | 2026-11-22  |
+
+### [C2](C2/) — 0/1 · 1 no writeup
+
+| Task           | Status | Last commit |
+|----------------|--------|-------------|
+| [img](C2/img/) | —      | 2026-11-22  |
+<!-- INDEX:END -->

@@ -1,5 +1,14 @@
 # Lab: SQL injection UNION attack, retrieving data from other tables
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | sqli |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `PRACTIONER`
 
 ## Description

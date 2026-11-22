@@ -1,5 +1,14 @@
 # Lab: CSRF where token is tied to non-session cookie
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | csrf |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `PRACTITIONER`
 
 ## Description

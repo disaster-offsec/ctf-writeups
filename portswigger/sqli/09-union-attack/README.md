@@ -1,5 +1,14 @@
 # Lab: SQL injection UNION attack, retrieving multiple values in a single column
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | sqli |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `PRACTITIONER`
 
 ## Description

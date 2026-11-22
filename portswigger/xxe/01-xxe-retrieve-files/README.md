@@ -1,5 +1,14 @@
 # Lab: Exploiting XXE using external entities to retrieve files
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | xxe |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 ## Description
 
 Level: `APPRENTICE`

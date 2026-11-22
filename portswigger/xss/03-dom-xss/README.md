@@ -1,5 +1,14 @@
 # Lab: DOM XSS in document.write sink using source location.search
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | xss |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 level: APPRENTICE
 
 ## Description

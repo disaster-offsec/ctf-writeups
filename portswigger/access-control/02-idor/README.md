@@ -1,5 +1,14 @@
 # Lab: User ID controlled by request parameter
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | access-control |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `APPRENTICE`
 
 ## Description

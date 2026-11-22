@@ -1,5 +1,14 @@
 # Lab: SSRF with blacklist-based input filter
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | ssrf |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 ## Description
 
 Level: `PRACTITIONER`

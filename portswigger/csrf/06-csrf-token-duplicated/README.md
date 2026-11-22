@@ -1,5 +1,14 @@
 # Lab: CSRF where token is duplicated in cookie
 
+| | |
+|---|---|
+| **Платформа / Событие** | PortSwigger Web Security Academy |
+| **Категория** | csrf |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-15 |
+| **Ссылка на таск** | — |
+
 Level: `PRACTITIONER`
 
 ## Description

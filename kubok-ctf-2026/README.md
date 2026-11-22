@@ -14,6 +14,6 @@ Solved: 5/9 · drafts: 4
 | [image-viewer](image-viewer/)                             | draft  | 2026-11-18  |
 | [MeowSim: Schrödinger E... — райтап](meow-sim/)           | done   | 2026-11-18  |
 | [Райтап: реверс-инжиниринг задания mmm](mmm/)             | done   | 2026-11-18  |
-| [my-own-fs](my-own-fs/)                                   | draft  | 2026-11-18  |
+| [my-own-fs](my-own-fs/)                                   | draft  | 2026-11-22  |
 | [Weird RSA — райтап](weird-rsa/)                          | done   | 2026-11-18  |
 <!-- INDEX:END -->
