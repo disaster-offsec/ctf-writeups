@@ -65,11 +65,11 @@ Solved: 22/28 · drafts: 6
 
 ## Platforms & trainings
 
-Solved: 39/45 · no writeup: 6
+Solved: 40/46 · no writeup: 6
 
 | Folder                                      | Done  | Draft | Last commit |
 |---------------------------------------------|-------|-------|-------------|
-| [flare-on-2014](flare-on-2014/)             | 0/6   | —     | 2026-11-22  |
+| [flare-on-2014](flare-on-2014/)             | 1/7   | —     | 2026-11-22  |
 | [hackthebox](hackthebox/)                   | 6/6   | —     | 2026-11-22  |
 | [others](others/)                           | 1/1   | —     | 2026-11-22  |
 | [picoctf-trainings](picoctf-trainings/)     | 22/22 | —     | 2026-11-22  |

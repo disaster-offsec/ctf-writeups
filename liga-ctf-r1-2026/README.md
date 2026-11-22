@@ -7,5 +7,5 @@ Solved: 0/1 · drafts: 1
 
 | Task                                                 | Status | Last commit |
 |------------------------------------------------------|--------|-------------|
-| [Я просто хотел майнкрафт](i-just-wanted-minecraft/) | draft  | 2026-11-21  |
+| [Я просто хотел майнкрафт](i-just-wanted-minecraft/) | draft  | 2026-11-22  |
 <!-- INDEX:END -->

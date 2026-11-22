@@ -62,8 +62,8 @@
 
 | Lab                                                                              | Status | Last commit |
 |----------------------------------------------------------------------------------|--------|-------------|
-| [Lab: Basic SSRF against the local server](01-ssrf-basic/)                       | done   | 2026-10-25  |
-| [Lab: Basic SSRF against another back-end system](02-ssrf-basic-backend-system/) | done   | 2026-10-25  |
-| [Lab: SSRF with blacklist-based input filter](03-ssrf-blacklist/)                | done   | 2026-10-26  |
+| [Lab: Basic SSRF against the local server](01-ssrf-basic/)                       | done   | 2026-11-22  |
+| [Lab: Basic SSRF against another back-end system](02-ssrf-basic-backend-system/) | done   | 2026-11-22  |
+| [Lab: SSRF with blacklist-based input filter](03-ssrf-blacklist/)                | done   | 2026-11-22  |
 
 <!-- INDEX:END -->

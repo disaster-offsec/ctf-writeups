@@ -1,5 +1,14 @@
 # infra-3
 
+| | |
+|---|---|
+| **Платформа / Событие** | Standoff Bootcamp 7 |
+| **Категория** | — |
+| **Сложность** | — |
+| **Статус** | done |
+| **Дата решения** | 2026-11-21 |
+| **Ссылка на таск** | — |
+
 ## Description
 
 Используя данные, полученные в ходе внешней разведки, подключитесь к VPN компании.
@@ -31,7 +40,7 @@ cipher AES-256-CBC
 auth SHA512
 
 tls-client
-remote-cert-tls server
+remote-cert-tls serverpython tools/ensure_header.py "standoff-bootcamp-7/**" --status done --date "2026-11-21"
 
 <ca>
 -----BEGIN CERTIFICATE-----

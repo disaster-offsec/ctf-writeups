@@ -7,6 +7,6 @@
 
 | Lab                                                         | Status | Last commit |
 |-------------------------------------------------------------|--------|-------------|
-| [Lab: File path traversal, simple case](01-path-traversal/) | done   | 2026-10-26  |
+| [Lab: File path traversal, simple case](01-path-traversal/) | done   | 2026-11-22  |
 
 <!-- INDEX:END -->

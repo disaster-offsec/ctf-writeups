@@ -64,11 +64,11 @@ email=wiener@normal-user.com
 
 | Lab                                                                                              | Status | Last commit |
 |--------------------------------------------------------------------------------------------------|--------|-------------|
-| [Lab: CSRF vulnerability with no defenses](01-csrf-basic/)                                       | done   | 2026-10-26  |
-| [Lab: CSRF where token validation depends on request method](02-csrf-token-validation/)          | done   | 2026-11-18  |
-| [Lab: CSRF where token validation depends on token being present](03-csrf-token-validation/)     | done   | 2026-11-18  |
-| [Lab: CSRF where token is not tied to user session](04-csrf-user-session/)                       | done   | 2026-11-18  |
-| [Lab: CSRF where token is tied to non-session cookie](05-csrf-token-tied-to-non-session-cookie/) | done   | 2026-11-18  |
-| [Lab: CSRF where token is duplicated in cookie](06-csrf-token-duplicated/)                       | done   | 2026-11-18  |
+| [Lab: CSRF vulnerability with no defenses](01-csrf-basic/)                                       | done   | 2026-11-22  |
+| [Lab: CSRF where token validation depends on request method](02-csrf-token-validation/)          | done   | 2026-11-22  |
+| [Lab: CSRF where token validation depends on token being present](03-csrf-token-validation/)     | done   | 2026-11-22  |
+| [Lab: CSRF where token is not tied to user session](04-csrf-user-session/)                       | done   | 2026-11-22  |
+| [Lab: CSRF where token is tied to non-session cookie](05-csrf-token-tied-to-non-session-cookie/) | done   | 2026-11-22  |
+| [Lab: CSRF where token is duplicated in cookie](06-csrf-token-duplicated/)                       | done   | 2026-11-22  |
 
 <!-- INDEX:END -->

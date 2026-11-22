@@ -46,6 +46,6 @@
 
 | Lab                                                                                     | Status | Last commit |
 |-----------------------------------------------------------------------------------------|--------|-------------|
-| [Lab: Exploiting XXE using external entities to retrieve files](01-xxe-retrieve-files/) | done   | 2026-10-26  |
+| [Lab: Exploiting XXE using external entities to retrieve files](01-xxe-retrieve-files/) | done   | 2026-11-22  |
 
 <!-- INDEX:END -->

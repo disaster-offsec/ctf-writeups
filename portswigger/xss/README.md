@@ -46,10 +46,10 @@ XSS — уязвимость, позволяющая внедрить вредо
 
 | Lab                                                                                        | Status | Last commit |
 |--------------------------------------------------------------------------------------------|--------|-------------|
-| [Lab: Reflected XSS into HTML context with nothing encoded](01-reflected-xss/)             | done   | 2026-11-18  |
-| [Lab: Stored XSS into HTML context with nothing encoded](02-stored-xss/)                   | done   | 2026-11-18  |
-| [Lab: DOM XSS in document.write sink using source location.search](03-dom-xss/)            | done   | 2026-11-18  |
-| [Lab: DOM XSS in innerHTML sink using source location.search](04-dom-xss/)                 | done   | 2026-11-18  |
-| [Reflected XSS into HTML context with most tags and attributes blocked](05-reflected-xss/) | done   | 2026-11-18  |
+| [Lab: Reflected XSS into HTML context with nothing encoded](01-reflected-xss/)             | done   | 2026-11-22  |
+| [Lab: Stored XSS into HTML context with nothing encoded](02-stored-xss/)                   | done   | 2026-11-22  |
+| [Lab: DOM XSS in document.write sink using source location.search](03-dom-xss/)            | done   | 2026-11-22  |
+| [Lab: DOM XSS in innerHTML sink using source location.search](04-dom-xss/)                 | done   | 2026-11-22  |
+| [Reflected XSS into HTML context with most tags and attributes blocked](05-reflected-xss/) | done   | 2026-11-22  |
 
 <!-- INDEX:END -->

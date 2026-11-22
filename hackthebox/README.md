@@ -7,10 +7,10 @@ Solved: 6/6
 
 | Task                       | Status | Last commit |
 |----------------------------|--------|-------------|
-| [Cohort](cohort/)          | done   | 2026-11-13  |
-| [Dancing](dancing/)        | done   | 2026-10-23  |
-| [DoubleTake](doubletake/)  | done   | 2026-11-16  |
-| [Fawn](fawn/)              | done   | 2026-10-23  |
-| [Meow](meow/)              | done   | 2026-10-23  |
-| [TwoMillion](two-million/) | done   | 2026-11-20  |
+| [Cohort](cohort/)          | done   | 2026-11-22  |
+| [Dancing](dancing/)        | done   | 2026-11-22  |
+| [DoubleTake](doubletake/)  | done   | 2026-11-22  |
+| [Fawn](fawn/)              | done   | 2026-11-22  |
+| [Meow](meow/)              | done   | 2026-11-22  |
+| [TwoMillion](two-million/) | done   | 2026-11-22  |
 <!-- INDEX:END -->

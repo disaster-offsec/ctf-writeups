@@ -304,17 +304,17 @@ SELECT f();</code></pre></td>
 
 | Lab                                                                                                                | Status | Last commit |
 |--------------------------------------------------------------------------------------------------------------------|--------|-------------|
-| [SQL injection vulnerability in WHERE clause allowing retrieval of hidden data WRITEUP](01-sqli-in-where/)         | done   | 2026-11-19  |
-| [Lab: SQL injection vulnerability allowing login bypass](02-sqli-login-bypass/)                                    | done   | 2026-11-19  |
-| [Lab: SQL injection attack, querying the database type and version on Oracle](03-sqli-querying-info/)              | done   | 2026-11-19  |
-| [Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft](04-sqli-querying-info/) | done   | 2026-11-19  |
-| [Lab: SQL injection attack, listing the database contents on non-Oracle databases](05-sqli-listing/)               | done   | 2026-11-19  |
-| [Lab: SQL injection attack, listing the database contents on Oracle](06-sqli-listing/)                             | done   | 2026-11-19  |
-| [Lab: SQL injection UNION attack, determining the number of columns returned by the query](07-union-attack/)       | done   | 2026-11-08  |
-| [Lab: SQL injection UNION attack, retrieving data from other tables](08-union-attack/)                             | done   | 2026-11-08  |
-| [Lab: SQL injection UNION attack, retrieving multiple values in a single column](09-union-attack/)                 | done   | 2026-11-08  |
-| [Lab: Blind SQL injection with conditional responses](10-blind-sqli/)                                              | done   | 2026-11-08  |
-| [Lab: Blind SQL injection with conditional errors](11-blind-sqli/)                                                 | done   | 2026-11-08  |
-| [Lab: Blind SQL injection with time delays](12-blind-sqli/)                                                        | done   | 2026-11-08  |
+| [SQL injection vulnerability in WHERE clause allowing retrieval of hidden data WRITEUP](01-sqli-in-where/)         | done   | 2026-11-22  |
+| [Lab: SQL injection vulnerability allowing login bypass](02-sqli-login-bypass/)                                    | done   | 2026-11-22  |
+| [Lab: SQL injection attack, querying the database type and version on Oracle](03-sqli-querying-info/)              | done   | 2026-11-22  |
+| [Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft](04-sqli-querying-info/) | done   | 2026-11-22  |
+| [Lab: SQL injection attack, listing the database contents on non-Oracle databases](05-sqli-listing/)               | done   | 2026-11-22  |
+| [Lab: SQL injection attack, listing the database contents on Oracle](06-sqli-listing/)                             | done   | 2026-11-22  |
+| [Lab: SQL injection UNION attack, determining the number of columns returned by the query](07-union-attack/)       | done   | 2026-11-22  |
+| [Lab: SQL injection UNION attack, retrieving data from other tables](08-union-attack/)                             | done   | 2026-11-22  |
+| [Lab: SQL injection UNION attack, retrieving multiple values in a single column](09-union-attack/)                 | done   | 2026-11-22  |
+| [Lab: Blind SQL injection with conditional responses](10-blind-sqli/)                                              | done   | 2026-11-22  |
+| [Lab: Blind SQL injection with conditional errors](11-blind-sqli/)                                                 | done   | 2026-11-22  |
+| [Lab: Blind SQL injection with time delays](12-blind-sqli/)                                                        | done   | 2026-11-22  |
 
 <!-- INDEX:END -->
