@@ -1,0 +1,121 @@
+{
+  "format": "exchange-capture/3",
+  "operations": [
+    {
+      "label": "calibration-0",
+      "tag": 1161865073,
+      "base": "00000000000000000000000000000002",
+      "exponent": "123456789abcdef00123456789abcdef",
+      "result": "33dee485150a78572e372126052a1a39"
+    },
+    {
+      "label": "calibration-1",
+      "tag": 473446385,
+      "base": "00000000000000000000000000000002",
+      "exponent": "5edcba98765432100123456789abcdef",
+      "result": "06c3bf306daf9bd8d529bf5b3ea081fd"
+    },
+    {
+      "label": "alpha-left",
+      "tag": 598370674,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "6883123e177b78edad3a6e64d18f1183"
+    },
+    {
+      "label": "alpha-right",
+      "tag": 1106329584,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "711513a387ad7b06fef537e32a19f981"
+    },
+    {
+      "label": "beta-left",
+      "tag": 1502730184,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "465ef55f7e5ae84e11651d0baffe61bc"
+    },
+    {
+      "label": "beta-right",
+      "tag": 38946575,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "4154e68603df29148df9fc8aa6e748dd"
+    },
+    {
+      "label": "gamma-left",
+      "tag": 1133576624,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "7b70b55aa5bcc1350790dbb64ae41ca9"
+    },
+    {
+      "label": "gamma-right",
+      "tag": 1371515783,
+      "base": "00000000000000000000000000000002",
+      "exponent": null,
+      "result": "609f8aedeaeb0c8ca8cf2bafba535a24"
+    },
+    {
+      "label": "calibration-2",
+      "tag": 1941424595,
+      "base": "00000000000000000000000000000002",
+      "exponent": "31415926535897932384626433832795",
+      "result": "3029fbb832a059b1737e96b96cad8036"
+    }
+  ],
+  "sessions": [
+    {
+      "name": "alpha",
+      "left_tag": 598370674,
+      "right_tag": 1106329584
+    },
+    {
+      "name": "beta",
+      "left_tag": 1502730184,
+      "right_tag": 38946575
+    },
+    {
+      "name": "gamma",
+      "left_tag": 1133576624,
+      "right_tag": 1371515783
+    }
+  ],
+  "target": "beta",
+  "trace_words": [
+    {
+      "tag": 473446385,
+      "word": 1159921920
+    },
+    {
+      "tag": 598370674,
+      "word": 3421308160
+    },
+    {
+      "tag": 1106329584,
+      "word": 543098112
+    },
+    {
+      "tag": 1502730184,
+      "word": 4284941056
+    },
+    {
+      "tag": 38946575,
+      "word": 1695483648
+    },
+    {
+      "tag": 1133576624,
+      "word": 4239065856
+    },
+    {
+      "tag": 1371515783,
+      "word": 2019951104
+    },
+    {
+      "tag": 1941424595,
+      "word": 2836202752
+    }
+  ],
+  "ciphertext": "48fdee7dc0b1074a0fe1dc8d409aa60371a8eb28ddee5750"
+}
