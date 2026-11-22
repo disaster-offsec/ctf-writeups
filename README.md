@@ -62,14 +62,14 @@ Solved: 31/31
 
 ## CTF events
 
-Solved: 25/35 · drafts: 4 · no writeup: 6
+Solved: 26/36 · drafts: 4 · no writeup: 6
 
 | Folder                                | Done  | Draft | Last commit |
 |---------------------------------------|-------|-------|-------------|
 | [avitoctf-2026](avitoctf-2026/)       | 2/2   | —     | 2026-11-22  |
 | [flare-on-2014](flare-on-2014/)       | 1/7   | —     | 2026-11-22  |
 | [kubok-ctf-2026](kubok-ctf-2026/)     | 5/9   | 4     | 2026-11-22  |
-| [liga-ctf-r1-2026](liga-ctf-r1-2026/) | 1/1   | —     | 2026-11-22  |
+| [liga-ctf-r1-2026](liga-ctf-r1-2026/) | 2/2   | —     | 2026-11-22  |
 | [solarctf-2026](solarctf-2026/)       | 16/16 | —     | 2026-11-22  |
 
 ## Platforms & trainings
