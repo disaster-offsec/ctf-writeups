@@ -3,10 +3,11 @@
 Райтапы задач: TL;DR → Steps → Why it works → Defense. Индекс ниже ведётся скриптом `tools/generate_index.py` — между маркерами руками не править.
 
 <!-- INDEX:START -->
-Solved: 2/2
+Solved: 3/3
 
 | Task                                                 | Status | Last commit |
 |------------------------------------------------------|--------|-------------|
 | [Я просто хотел майнкрафт](i-just-wanted-minecraft/) | done   | 2026-11-22  |
-| [Momentum](momentum/)                                | done   | -           |
+| [Momentum](momentum/)                                | done   | 2026-11-22  |
+| [Сработка](srabotka/)                                | done   | -           |
 <!-- INDEX:END -->
